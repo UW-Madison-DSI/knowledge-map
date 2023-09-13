@@ -1,0 +1,125 @@
+/******************************************************************************\
+|                                                                              |
+|                                 dialogs.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+@close-button-size: 30px;
+
+.modal {
+	display: flex;
+	background: fade(black, 10%);
+	pointer-events: auto;
+
+	.dialog {
+		width: 75%;
+		height: 75%;
+		margin: auto;
+		padding: 10px;
+		margin: auto;
+		background: white;
+		border-radius: 10px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: lighten(lightgrey, 10%);
+		box-shadow: 10px 10px 20px fade(black, 10%);
+
+		button.close {
+			width: @close-button-size;
+			height: @close-button-size;
+
+			& + .content {
+				margin-top: 40px;
+			}
+		}
+	
+		&#help > .content {
+			height: calc(~"100% - 40px");
+		}
+
+		h1 {
+			font-weight: bold;
+			font-size: 150%;
+			text-align: center;
+
+			.icon {
+				color: @brand-primary;
+				margin-right: 5px;
+			}
+		}
+
+		.content {
+			overflow: auto;
+		}
+
+		.bottom-buttons {
+			margin-top: 20px;
+			text-align: right;
+		}
+
+		//
+		// specific dialog types
+		//
+
+		&#help {
+			.content {
+				iframe {
+					width: 100%;
+					height: 100%;
+					border: none;
+				}
+			}
+		}
+
+		&#message {
+			width: 600px;
+			height: 100px;
+			text-align: center;
+			display: flex;
+			position: relative;
+
+			&.medium-height {
+				height: 150px;
+			}
+
+			button.close {
+				position: absolute;
+				right: 10px;
+			}
+				
+			.content {
+				margin: auto;
+			}
+		}
+
+		&#download {
+			height: 200px;
+			text-align: center;
+
+			.content {
+
+				.format {
+					margin: 10px;
+				}
+
+				a {
+					button {
+						width: auto;
+						padding: 0 10px;
+						margin-top: 10px;
+
+						i {
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

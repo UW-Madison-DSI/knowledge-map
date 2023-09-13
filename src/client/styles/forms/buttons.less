@@ -1,0 +1,64 @@
+/******************************************************************************\
+|                                                                              |
+|                                   buttons.js                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+@button-border-radius: 5px;
+
+button {
+	color: initial;
+	border-radius: @button-border-radius;
+	border-width: 1px;
+	border-style: solid;
+	border-color: lighten(lightgrey, 10%);
+	pointer-events: auto;
+	padding: 5px 10px;
+	outline: none;
+
+	&:hover {
+		background: #f7f7f7;
+	}
+
+	&.close, &.clear {
+		&:hover {
+			color: crimson;
+			opacity: 1;
+		}
+	}
+
+	&:focus {
+		outline: none !important;
+	}
+
+	&.btn.btn-primary {
+		background: darkred;
+		border: darkred;
+
+		&:hover, &:active {
+			background: darken(darkred, 10%);
+		}
+	}
+}
+
+.expander {
+	display: inline-block;
+
+	button {
+		display: block;
+
+		&:focus {
+			outline: none !important;
+		}
+	}
+
+	.expand {
+		display: none;
+	}
+}

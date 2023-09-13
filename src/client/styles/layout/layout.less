@@ -1,0 +1,199 @@
+/******************************************************************************\
+|                                                                              |
+|                                  layout.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+body {
+	font-size: 14px;
+	margin: 0;
+}
+
+#main {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+#overlays {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	pointer-events: none;
+}
+
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.full-screen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+.page {
+	padding: 0 50px;
+
+	h1:first-child {
+		margin-top: 0;
+	}
+}
+
+canvas {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dark canvas {
+	background: #333333;
+}
+
+#logo {
+	position: absolute;
+	margin: 10px;
+	right: 0;
+
+	img {
+		height: 40px;	
+	}
+}
+
+.overlay {
+	display: flex;
+	flex-direction: column;
+	pointer-events: none;
+
+	* {
+		pointer-events: auto;
+	}
+}
+
+.title {
+	// font-weight: bold;
+
+	+ .buttons {
+		margin-top: 5px;
+	}
+}
+
+span.count {
+	margin-right: 5px;
+}
+	
+span.highlighted {
+	background: lightblue;
+}
+
+#index {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px;
+	margin: 10px;
+	background: rgba(255, 255, 255, 0.75);
+	border-radius: 5px;
+}
+
+.hidden {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+#background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding: 5px 10px;
+
+	a {
+		color: black;
+	}
+}
+
+#info {
+
+	h1, h2 {
+		text-align: center;
+	}
+
+	.subheading {
+		font-weight: bold;
+		text-align: center;
+	}
+}
+
+.fineprint {
+	font-size: 12px;
+}
+
+.figure {
+	text-align: center;
+
+	img {
+		max-width: 100%;
+	}
+
+	.caption {
+		font-weight: bold;
+	}
+
+	+ p {
+		margin-top: 10px;
+	}
+}
+
+//
+// collapsible styles
+//
+
+.collapsed {
+	.expander {
+		.expand {
+			display: block;
+		}
+
+		.collapse {
+			display: none;
+		}
+	}
+
+	.details {
+		display: none;
+	}
+}

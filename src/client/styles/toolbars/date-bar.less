@@ -1,0 +1,102 @@
+/******************************************************************************\
+|                                                                              |
+|                                 date-bar.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+#date-bar {
+	display: flex;
+	margin: auto;
+	margin-bottom: 10px;
+	white-space: nowrap;
+	padding-left: 5px;
+
+	> div {
+		text-align: center;
+		margin: 0 5px;
+		height: @toolbar-button-size;
+
+		label {
+			font-size: 13px;
+			line-height: @toolbar-button-size;
+		}
+
+		input[type="checkbox"] {
+			margin-left: 5px;
+			vertical-align: top;
+		}
+	}
+
+	.title {
+		line-height: @toolbar-button-size;
+	}
+
+	#date {
+		display: flex;
+		width: 100px;
+		padding: 0;
+
+		#year {
+			width: 100px;
+			line-height: @toolbar-button-size;
+		}
+
+		#play {
+			margin-left: -5px;
+		}
+	}
+
+	#play {
+
+		i.fa-play {
+			color: green;
+		}
+
+		i.fa-pause {
+			color: crimson;
+		}
+	}
+
+	#date-slider {
+		display: flex;
+		min-width: 250px;
+		flex-grow: 1;
+		padding: 9px;
+
+		.slider-range {
+			width: 100%;
+		}
+	}
+
+	.buttons {
+		padding: 0;
+
+		button {
+			margin-left: 5px;
+
+			&:last-child {
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+		}
+	}
+}
+
+/*
+ * slider styles
+ */
+
+.slider-label {
+	width: 50px;
+}
+
+.ui-slider-handle {
+	border: 1px solid #aaaaaa !important;
+	outline: none !important;
+}

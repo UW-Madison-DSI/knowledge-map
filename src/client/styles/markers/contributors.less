@@ -1,0 +1,59 @@
+/******************************************************************************\
+|                                                                              |
+|                               contributors.less                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.contributors {
+
+	.contributor {
+
+		//
+		// highlighting
+		//
+
+		&.selected, &:hover {
+			circle {
+				fill: lighten(@select-color, 25%) !important;
+				stroke: @select-color !important;
+			}
+
+			+ line {
+				stroke-opacity: 1;
+			}
+
+			text {
+				fill: @select-color;
+			}
+		}
+	}
+
+	line {
+		// stroke-dasharray: 5,5;
+		stroke-opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-contributors {
+	.contributors {
+		display: none;
+	}
+}
+
+.hide-unselected {
+	.contributors line {
+		stroke-opacity: 1;
+	}
+}
+

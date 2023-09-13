@@ -1,0 +1,294 @@
+/******************************************************************************\
+|                                                                              |
+|                                 sidebar.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+//
+// sidebar colors
+//
+
+@sidebar-background-color: @very-light-grey;
+@sidebar-text-color: #303030;
+@sidebar-subtitle-color: @brand-primary;
+@sidebar-label-color: #303030;
+
+@sidebar-panel-color: white;
+@sidebar-link-color: grey;
+@sidebar-title-color: grey;
+
+@nested-sidebar-panel-color: black;
+@nested-sidebar-panel-background-color: transparent;
+@nested-sidebar-panel-link-color: @sidebar-link-color;
+
+//
+// sidebar attributes
+//
+
+@sidebar-panel-padding: 10px;
+
+//
+// sidebar styles
+//
+
+.sidebar {
+	overflow: auto;
+	color: @sidebar-text-color;
+	background-color: @sidebar-background-color;
+	word-break: break-word;
+
+	h1 {
+		font-size: 300%;
+		font-weight: bold;
+		margin-top: 0;
+	}
+
+	.logo {
+		margin: 10px;
+	}
+
+	.message {
+		padding: 10px;
+	}
+
+	button {
+		background: white;
+	}
+
+	.expander {
+		margin-top: -5px;
+		margin-bottom: -5px;
+
+		button {
+			background: none;
+
+			&:hover {
+				// color: white;
+			}
+
+			&:active {
+				box-shadow: none;
+			}
+		}
+	}
+
+	label {
+		display: block;
+	}
+
+	.panel {
+		padding: @sidebar-panel-padding;
+		background: @sidebar-panel-color;
+		border-radius: 0;
+		margin: 0;
+
+		.heading {
+			text-align: center;
+			font-weight: bold;
+			font-size: 200%;
+			margin: 10px;
+		}
+
+		&:empty {
+			display: none;
+		}
+
+		button#close {
+			position: absolute;
+			right: 20px;
+			background: @brand-primary;
+			color: white;
+
+			&:hover {
+				color: lightgrey;
+			}
+		}
+
+		//
+		// nested panels
+		//
+
+		.panel {
+			color: @nested-sidebar-panel-color;
+			background-color: @nested-sidebar-panel-background-color;
+			box-shadow: none;
+			padding: 0;
+			margin: 0;
+
+			.header {
+				text-align: center;
+				font-weight: bold;
+
+				+ .items {
+					margin-top: 10px;
+				}
+			}
+
+			.header:not(.empty) {
+				// display: none;
+
+				.icon {
+					display: none;
+				}
+				.count {
+					display: none;
+				}
+			}
+
+			a {
+				color: @nested-sidebar-panel-link-color;
+			}
+		}
+	}
+
+	ol.panel {
+		padding: 0;
+	}
+
+	div.profile {
+		padding: 10px;
+
+		> div:not(:first-child) {
+			label {
+				margin-top: 10px;
+			}
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0;
+			font-size: 125%;
+			color: @sidebar-label-color;
+		}
+	}
+
+	.details {
+		margin-top: 10px;
+
+		.panel {
+			padding: 0;
+		}
+	}
+
+	.radio-buttons {
+		padding: 10px;
+		text-align: center;
+	}
+
+	.info {
+		padding: 10px;
+
+		> .title {
+			font-size: 150%;
+			font-weight: bold;
+			text-align: center;
+			margin: 10px;
+
+			.icon {
+				display: block;
+			}
+
+			.subtitle {
+				font-size: 75%;
+				padding-bottom: 10px;
+				color: @sidebar-subtitle-color;
+			}
+
+			+ .items {
+				border-top: 2px solid @brand-primary;
+			}
+		}
+
+		.content {
+			background: white;
+			padding: 10px;
+			margin-top: 10px;
+			border-radius: 10px;
+		}
+	}
+
+	.activities {
+		> .info > .title {
+			font-size: 150%;
+			margin: 20px;
+		}
+	}
+
+	.items.panel {
+		padding: 0;
+	}
+
+	.thumbnail {
+		margin: auto;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		max-width: 250px;
+		cursor: pointer;
+	}
+
+	/*
+	.sorting {
+		border-bottom: 2px solid @brand-primary;
+		margin-bottom: 10px;
+	}
+	*/
+
+	//
+	// links
+	//
+
+	a {
+		color: @sidebar-link-color;
+		cursor: pointer;
+	}
+
+	.title a {
+		color: @sidebar-title-color;
+	}
+
+	//
+	// bottom buttons
+	//
+
+	.buttons {
+		margin-top: 10px;
+		text-align: center;
+		/*
+		padding-top: 10px;
+		border-top: 2px solid @brand-primary;
+		*/
+
+		button {
+			border: none;
+		}
+	}
+
+	//
+	// trends sidebar
+	//
+
+	.trends {
+		padding: 10px;
+		padding-top: 20px;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: white;
+
+		label {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			margin-left: -10px;
+			padding: 5px;
+			top: 0;
+		}
+	}
+}

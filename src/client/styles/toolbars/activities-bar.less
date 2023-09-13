@@ -1,0 +1,84 @@
+/******************************************************************************\
+|                                                                              |
+|                               activities-bar.js                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+#activities-bar {
+	position: absolute;
+	top: 235px;
+	left: 10px;
+
+	.buttons {
+		button {
+			&#close {
+				color: white;
+				background: crimson;
+				border: crimson;
+			}
+		}
+	}
+
+	#person-buttons {
+		display: flex;
+		flex-direction: column;
+	}
+
+	//
+	// button colors
+	//
+
+	button#show-info.selected {
+		color: @info-color;
+	}
+
+	button#show-contributors.selected {
+		color: @contributors-color;
+	}
+
+	button#show-activities.selected {
+		color: @activities-color;
+	}
+
+	button#show-grants.selected {
+		color: @grant-color;
+	}
+
+	button#show-articles.selected {
+		color: @article-color;
+	}
+
+	button#show-books.selected {
+		color: @book-color;
+	}
+
+	button#show-book-chapters.selected {
+		color: @book-chapter-color;
+	}
+
+	button#show-conference-proceedings.selected {
+		color: @conference-proceeding-color;
+	}
+
+	button#show-patents.selected {
+		color: @patent-color;
+	}
+
+	button#show-technology.selected {
+		color: @technology-color;
+	}
+
+	button#show-awards.selected {
+		color: @award-color;
+	}
+
+	button#show-help.selected {
+		color: @help-color;
+	}
+}

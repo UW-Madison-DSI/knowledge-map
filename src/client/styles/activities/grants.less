@@ -1,0 +1,61 @@
+/******************************************************************************\
+|                                                                              |
+|                                  grants.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.grant {
+
+	> .marker {
+		circle {
+			fill: @grant-color;
+			stroke: @grant-color;
+		}
+
+		&.highlighted, &.selected {
+			fill: @select-color !important;
+			stroke: @select-color !important;
+
+			circle {
+				fill: @select-color !important;
+				stroke: @select-color !important;		
+			}
+		}
+	}
+
+	.contributor {
+		.background {
+			stroke: @grant-color;
+		}
+
+		path {
+			fill: @grant-color;
+		}
+	}
+
+	line {
+		stroke: @grant-color;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-grants {
+	.grants {
+		display: none;
+	}
+}
+
+.hide-unselected-grants {
+	.grant:not(.selected) {
+		display: none;
+	}
+}

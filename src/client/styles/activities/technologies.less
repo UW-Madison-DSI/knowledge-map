@@ -1,0 +1,57 @@
+/******************************************************************************\
+|                                                                              |
+|                               technologies.less                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.technology {
+
+	> .marker {
+
+		.background {
+			stroke: @technology-color;
+		}
+
+		.icon {
+			fill: @technology-color;
+			stroke: none;
+			transform: scale(0.9) translate(-12px, -12px);
+		}
+	}
+
+	.contributor {
+		.background {
+			stroke: @technology-color;
+		}
+
+		path {
+			fill: @technology-color;
+		}
+	}
+
+	line {
+		stroke: @technology-color;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-technologies {
+	.technology {
+		display: none;
+	}
+}
+
+.hide-unselected-technologies {
+	.technology:not(.selected) {
+		display: none;
+	}
+}

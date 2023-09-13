@@ -1,0 +1,59 @@
+/******************************************************************************\
+|                                                                              |
+|                                 articles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.article {
+
+	> .marker {
+
+		.background {
+			stroke: @article-color;
+		}
+
+		.icon {
+			fill: @article-color;
+			stroke: none;
+			transform: scale(0.65, 0.75) translate(-10px, -12px);
+		}
+	}
+
+	.contributor {
+		.background {
+			stroke: @article-color;
+			// fill: @article-color;
+			// fill-opacity: 0.25;
+		}
+
+		path {
+			fill: @article-color;
+		}
+	}
+
+	line {
+		stroke: @article-color;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-articles {
+	.articles {
+		display: none;
+	}
+}
+
+.hide-unselected-articles {
+	.article:not(.selected) {
+		display: none;
+	}
+}

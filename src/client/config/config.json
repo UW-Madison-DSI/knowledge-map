@@ -1,0 +1,6 @@
+{
+	"servers": {
+		"academic": "http://localhost/academic-server/public",
+		"campus_map": "http://localhost/campus-map-server/public"
+	}
+}

@@ -1,0 +1,132 @@
+/******************************************************************************\
+|                                                                              |
+|                                 toolbars.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+@toolbar-button-size: 30px;
+@toolbar-button-color: darkgrey;
+@toolbar-button-font-size: 20px;
+@toolbar-button-hover-color: darken(grey, 10%);
+@toolbar-button-selected-color: darken(grey, 20%);
+
+.toolbar {
+	display: flex;
+	padding: 5px;
+	background: white;
+	border-width: 1px;
+	border-style: solid;
+	border-color: lighten(lightgrey, 10%);
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px rgb(0 0 0 / 10%);
+
+	.title {
+		font-size: 13px;
+		font-weight: bold;
+		color: @brand-primary;
+	}
+
+	//
+	// toolbar buttons
+	//
+
+	.buttons {
+		display: flex;
+
+		button {
+			width: @toolbar-button-size;
+			height: @toolbar-button-size;
+			font-size: @toolbar-button-font-size;
+			color: @toolbar-button-color;
+			background: transparent;
+			padding: 0;
+
+			&.close, &.clear {
+				&:hover {
+					color: crimson;
+				}
+			}
+
+			&:hover {
+				color: @toolbar-button-hover-color;
+			}
+
+			&.selected {
+				color: @toolbar-button-selected-color;
+
+				&:hover {
+					color: @toolbar-button-selected-color;
+				}
+			}
+
+			&:active {
+				background: darken(white, 15%);
+			}
+		}
+	}
+
+	//
+	// toolbar input elements
+	//
+
+	input, select, button {
+		border: none;
+	}
+
+	select {
+		background: #e7e7e7;
+	}
+
+	.slider-range {
+		border-color: lightgrey;
+	}
+
+	//
+	// horizontal toolbars
+	//
+
+	&:not(.vertical) {
+		.buttons {
+			button:not(:first-child) {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	//
+	// vertical toolbars
+	//
+
+	&.vertical {
+		flex-direction: column;
+		text-align: center;
+
+		.title {
+			margin: 0 -5px;
+		}
+
+		.buttons {
+			flex-direction: column;
+			align-items: end;
+
+			button:not(:last-child) {
+				margin: auto;
+				// margin-bottom: 5px;
+			}
+		}
+
+		.divider {
+			display: block;
+			border-bottom: 2px dashed lightgrey;
+			width: 100%;
+			margin-top: 5px;
+			margin-bottom: 10px;
+		}
+	}
+}

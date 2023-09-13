@@ -1,0 +1,50 @@
+/******************************************************************************\
+|                                                                              |
+|                                buildings.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.building {
+	.polygon {
+		stroke: darkgrey;
+		fill: darkgrey;
+		stroke-width: 2;
+		vector-effect: non-scaling-stroke;
+	}
+
+	&.parking-lot {
+		.polygon {
+			stroke: lightgrey;
+			fill: lightgrey;
+		}
+	}
+
+	&.selected, &:hover {
+		.polygon {
+			stroke: lighten(crimson, 10%);
+			fill: lighten(crimson, 10%);
+
+			/*
+			filter: drop-shadow(-4px 0px 4px rgba(0,0,0,0.5));
+			*/
+			fill-opacity: 0.5;
+			stroke-opacity: 0.5;
+		}
+	}
+}
+
+.popover {
+	.building {
+		.icon {
+			// width: 100px !important;
+			// width: 100% !important;
+			width: 200px !important;
+		}
+	}
+}

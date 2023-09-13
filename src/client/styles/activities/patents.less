@@ -1,0 +1,57 @@
+/******************************************************************************\
+|                                                                              |
+|                                  patents.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.patent {
+
+	> .marker {
+
+		.background {
+			stroke: @patent-color;
+		}
+
+		.icon {
+			fill: @patent-color;
+			stroke: none;
+			transform: scale(0.9) translate(-12px, -12px);
+		}
+	}
+
+	.contributor {
+		.background {
+			stroke: @patent-color;
+		}
+
+		path {
+			fill: @patent-color;
+		}
+	}
+
+	line {
+		stroke: @patent-color;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-patents {
+	.patent {
+		display: none;
+	}
+}
+
+.hide-unselected-patents {
+	.patent:not(.selected) {
+		display: none;
+	}
+}

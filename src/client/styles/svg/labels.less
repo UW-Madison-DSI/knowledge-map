@@ -1,0 +1,35 @@
+/******************************************************************************\
+|                                                                              |
+|                                 labels.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+text.label {
+	font-weight: bold;
+	text-anchor: middle;
+	cursor: default;
+
+	&:hover {
+		fill: crimson;
+	}
+}
+
+text.label.hidden {
+	display: none;
+}
+
+//
+// hiding methods
+//
+
+.hide-labels {
+	.label:not(.selected) {
+		display: none !important;
+	}
+}

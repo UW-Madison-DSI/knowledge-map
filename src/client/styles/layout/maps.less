@@ -1,0 +1,47 @@
+/******************************************************************************\
+|                                                                              |
+|                                    maps.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+#background {
+	background: @very-light-grey;
+}
+	
+#viewport {
+
+	#tiles {
+		// filter: contrast(0.5) brightness(1.5);
+		// filter: contrast(0.25) brightness(1.5) saturate(2);
+		// -webkit-filter: contrast(0.25) brightness(1.5) saturate(2);
+		opacity: 0.5;
+	}
+
+	#labels, .marker {
+		text {
+			font-size: 13px;
+			font-weight: 800;
+
+			// outline
+			//
+			// filter: url(#outlined);
+			paint-order: stroke;
+			stroke: white;
+			stroke-width: 2px;
+			stroke-linecap: butt;
+			stroke-linejoin: miter;
+		}
+	}
+
+	&.hide-map {
+		#tiles, #departments, #buildings {
+			display: none !important;
+		}
+	}
+}

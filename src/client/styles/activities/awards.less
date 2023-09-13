@@ -1,0 +1,57 @@
+/******************************************************************************\
+|                                                                              |
+|                                   awards.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.award {
+
+	> .marker {
+
+		.background {
+			stroke: @award-color;
+		}
+
+		.icon {
+			fill: @award-color;
+			stroke: none;
+			transform: scale(0.9) translate(-12px, -11px);
+		}
+	}
+
+	.contributor {
+		.background {
+			stroke: @award-color;
+		}
+
+		path {
+			fill: @award-color;
+		}
+	}
+
+	line {
+		stroke: @award-color;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-awards {
+	.award {
+		display: none;
+	}
+}
+
+.hide-unselected-awards {
+	.award:not(.selected) {
+		display: none;
+	}
+}

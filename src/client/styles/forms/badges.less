@@ -1,0 +1,55 @@
+/******************************************************************************\
+|                                                                              |
+|                                   badges.js                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+//
+// badge properties
+//
+
+@badge-shadow: 1px 1px 5px fade(black, 50%);
+@round-badge-border-radius: 10px;
+
+//
+// badge styles
+//
+
+.badge {
+	min-width: 16px;
+	font-weight: bold;
+	padding: 0 3px;
+	border-width: 2px;
+	border-style: solid;
+	box-shadow: @badge-shadow;
+	border-radius: @round-badge-border-radius;
+	border-color: white;
+	background: @brand-primary;
+
+	i {
+		height: 10px;
+		min-width: 10px;
+		font-size: 85%;
+		vertical-align: top;
+		margin: 1px;
+		color: white;
+	}
+
+	&.active {
+		cursor: pointer;
+	}
+
+	&::empty {
+		display: none;
+	}
+}
+
+.badge:empty {
+	display: none;
+}

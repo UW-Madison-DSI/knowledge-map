@@ -1,0 +1,42 @@
+/******************************************************************************\
+|                                                                              |
+|                                  forms.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+input {
+	padding: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: lightgrey;
+	border-radius: 5px;
+	outline: none;
+}
+
+select {
+	-webkit-appearance: none;
+	border-radius: 0;
+	padding: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: lightgrey;
+	border-radius: 5px;
+	outline: none;
+}
+
+.label {
+	font-weight: normal;
+}
+
+.slider-range {
+	.ui-state-active {
+		background: @brand-primary;
+		border-color: @brand-primary !important;
+	}
+}

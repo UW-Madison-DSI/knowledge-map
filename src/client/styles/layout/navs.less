@@ -1,0 +1,33 @@
+/******************************************************************************\
+|                                                                              |
+|                                   navs.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+//
+// links
+//
+
+a {
+	color: @link-color;
+
+	&:hover {
+		color: darken(@link-color, 10%);
+	}
+}
+
+//
+// special links
+//
+
+.doi, .url {
+	a {
+		word-break: break-all;
+	}
+}

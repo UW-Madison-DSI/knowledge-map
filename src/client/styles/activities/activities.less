@@ -1,0 +1,39 @@
+/******************************************************************************\
+|                                                                              |
+|                                activities.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.article, .award, .book, .book-chapter, .conference-proceeding, .grant, .patent, .technology {
+	&:not(.selected) {
+		> line {
+			stroke-opacity: 0.5;
+		}
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-unselected {
+	.article, .award, .book, .book-chapter, .conference-proceeding, .grant, .patent, .technology {
+		&:not(.selected) {
+			display: none;
+		}
+	}
+}
+
+.hide-activity-markers {
+	.article, .award, .book, .book-chapter, .conference-proceeding, .grant, .patent, .technology {
+		> .marker, .contributor > line {
+			display: none;
+		}
+	}
+}

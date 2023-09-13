@@ -1,0 +1,53 @@
+<svg
+	id="datascience-map-icon" 
+	xmlns="http://www.w3.org/2000/svg" 
+	width="512px" 
+	height="512px" 
+	viewBox="0 0 512 512">
+
+	<style>
+		#icon-background {
+			fill: url(#white-to-grey);
+			stroke: #c5050c;
+		}
+		#icon-border {
+			stroke: #c5050c;
+			fill: none;
+		}
+		#icon-body {
+			fill: black;
+		}
+	</style>
+
+	<g transform="translate(256 256) scale(1 -1) translate(-256 -256)">
+		<g transform="scale(22) translate(-0.35 -1028.5)">
+			<path d="m8 1030.4 8 1v19l -8 -1z" fill="#b0b0c0"/>
+			<path d="m2 1031.4 6 -1v19l -6 1z" fill="#bdc3c7"/>
+			<path d="m16 1031.4 6 -1.5v 19.5l -6 1 z" fill="#bdc3c7"/>
+			<path d="m3 1032.4 5 -1v17l -5 1z" fill="#f0ffe0"/>
+			<path d="m8 1031.4 8 1v17l -8 -1z" fill="#e0f0d0"/>
+			<path d="m21 1048.4 -5 1v -17l5 -1z" fill="#f0ffe0"/>
+			<path d="m5.6875 1031.8 -2.3125 0.5 4.625 4.9v -2.9l -2.3125 -2.5z" fill="lightgrey"/>
+			<path d="m21 1046.4 -5 1v -6l5 -3z" fill="lightgrey"/>
+			<path d="m21 1048.4 -5 1v -6l5 -3z" fill="#d0e0ff"/>
+			<path d="m8 1042.4 8 -1v6l -8 -1z" fill="lightgrey"/>
+			<path d="m8 1044.4 8 -1v6l -8 -1z" fill="#c0d0f0"/>
+			<path d="m3 1045.4 5 -3v4l -5 1z" fill="lightgrey"/>
+			<path d="m3 1047.4 5 -3v4l -5 1z" fill="#d0e0ff"/>
+			<path d="m8 8.8008v -2.8985l4 8.6597h -1.469z" transform="translate(0 1028.4)" fill="lightgrey"/>
+		</g>
+	</g>
+
+	<linearGradient id="white-to-grey" gradientTransform="rotate(90)">
+		<stop offset="0%" stop-color="white" />
+		<stop offset="100%" stop-color="lightgrey" />
+	</linearGradient>
+
+	<circle id="icon-background" cx="256" cy="256" r="180" stroke-width="20" />
+
+	<g id="icon-body" transform="scale(10) translate(14,12) ">
+		<path d="M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09 4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z" />
+	</g>
+
+	<circle id="icon-border" cx="256" cy="256" r="180" stroke-width="20" />
+</svg>

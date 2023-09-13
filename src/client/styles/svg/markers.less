@@ -1,0 +1,61 @@
+/******************************************************************************\
+|                                                                              |
+|                                  markers.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+svg.marker {
+	overflow: visible;
+
+	// needed to avoid Safari text rendering bug
+	//
+	cursor: default;
+	
+	path {
+		stroke-width: 1.5;
+		stroke: white;
+	}
+
+	text {
+		text-anchor: middle;
+		cursor: default;
+		pointer-events: none;
+		font-weight: bold;
+	}
+
+	//
+	// icons
+	//
+
+	.icon {
+		pointer-events: none;
+	}
+
+	circle {
+		fill-opacity: 0.25;
+	}
+}
+
+.marker {
+	.background {
+		fill: white;
+		stroke: black;
+		fill-opacity: 1;
+	}
+}
+
+//
+// hiding methods
+//
+
+.hide-marker-labels {
+	.marker text {
+		display: none !important;
+	}
+}

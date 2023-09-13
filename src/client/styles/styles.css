@@ -1,0 +1,2773 @@
+/******************************************************************************\
+|                                                                              |
+|                                  styles.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                activities.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.article:not(.selected) > line,
+.award:not(.selected) > line,
+.book:not(.selected) > line,
+.book-chapter:not(.selected) > line,
+.conference-proceeding:not(.selected) > line,
+.grant:not(.selected) > line,
+.patent:not(.selected) > line,
+.technology:not(.selected) > line {
+  stroke-opacity: 0.5;
+}
+.hide-unselected .article:not(.selected),
+.hide-unselected .award:not(.selected),
+.hide-unselected .book:not(.selected),
+.hide-unselected .book-chapter:not(.selected),
+.hide-unselected .conference-proceeding:not(.selected),
+.hide-unselected .grant:not(.selected),
+.hide-unselected .patent:not(.selected),
+.hide-unselected .technology:not(.selected) {
+  display: none;
+}
+.hide-activity-markers .article > .marker,
+.hide-activity-markers .award > .marker,
+.hide-activity-markers .book > .marker,
+.hide-activity-markers .book-chapter > .marker,
+.hide-activity-markers .conference-proceeding > .marker,
+.hide-activity-markers .grant > .marker,
+.hide-activity-markers .patent > .marker,
+.hide-activity-markers .technology > .marker,
+.hide-activity-markers .article .contributor > line,
+.hide-activity-markers .award .contributor > line,
+.hide-activity-markers .book .contributor > line,
+.hide-activity-markers .book-chapter .contributor > line,
+.hide-activity-markers .conference-proceeding .contributor > line,
+.hide-activity-markers .grant .contributor > line,
+.hide-activity-markers .patent .contributor > line,
+.hide-activity-markers .technology .contributor > line {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 articles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.article > .marker .background {
+  stroke: cornflowerblue;
+}
+.article > .marker .icon {
+  fill: cornflowerblue;
+  stroke: none;
+  transform: scale(0.65, 0.75) translate(-10px, -12px);
+}
+.article .contributor .background {
+  stroke: cornflowerblue;
+}
+.article .contributor path {
+  fill: cornflowerblue;
+}
+.article line {
+  stroke: cornflowerblue;
+}
+.hide-articles .articles {
+  display: none;
+}
+.hide-unselected-articles .article:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   awards.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.award > .marker .background {
+  stroke: #e0a51b;
+}
+.award > .marker .icon {
+  fill: #e0a51b;
+  stroke: none;
+  transform: scale(0.9) translate(-12px, -11px);
+}
+.award .contributor .background {
+  stroke: #e0a51b;
+}
+.award .contributor path {
+  fill: #e0a51b;
+}
+.award line {
+  stroke: #e0a51b;
+}
+.hide-awards .award {
+  display: none;
+}
+.hide-unselected-awards .award:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                              book-chapters.less                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.book-chapter > .marker .background {
+  stroke: #a1745f;
+}
+.book-chapter > .marker .icon {
+  fill: #a1745f;
+  stroke: none;
+  transform: scale(0.8) translate(-12px, -12px);
+}
+.book-chapter .contributor .background {
+  stroke: #a1745f;
+}
+.book-chapter .contributor path {
+  fill: #a1745f;
+}
+.book-chapter line {
+  stroke: #a1745f;
+}
+.hide-book-chapters .book-chapter {
+  display: none;
+}
+.hide-unselected-book-chapters .book-chapter:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   books.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.book > .marker .background {
+  stroke: #a65c5c;
+}
+.book > .marker .icon {
+  fill: #a65c5c;
+  stroke: none;
+  transform: scale(0.8) translate(-12px, -12px);
+}
+.book .contributor .background {
+  stroke: #a65c5c;
+}
+.book .contributor path {
+  fill: #a65c5c;
+}
+.book line {
+  stroke: #a65c5c;
+}
+.hide-books .book {
+  display: none;
+}
+.hide-unselected-books .book:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                         conference-proceedings.less                          |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.conference-proceeding > .marker .background {
+  stroke: #e05252;
+}
+.conference-proceeding > .marker .icon {
+  fill: #e05252;
+  stroke: none;
+  transform: scale(0.8) translate(-12px, -12px);
+}
+.conference-proceeding .contributor .background {
+  stroke: #e05252;
+}
+.conference-proceeding .contributor path {
+  fill: #e05252;
+}
+.conference-proceeding line {
+  stroke: #e05252;
+}
+.hide-conference-proceedings .conference-proceeding {
+  display: none;
+}
+.hide-unselected-conference-proceeding .conference-proceeding:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  grants.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.grant > .marker circle {
+  fill: #248f24;
+  stroke: #248f24;
+}
+.grant > .marker.highlighted,
+.grant > .marker.selected {
+  fill: #ed365b !important;
+  stroke: #ed365b !important;
+}
+.grant > .marker.highlighted circle,
+.grant > .marker.selected circle {
+  fill: #ed365b !important;
+  stroke: #ed365b !important;
+}
+.grant .contributor .background {
+  stroke: #248f24;
+}
+.grant .contributor path {
+  fill: #248f24;
+}
+.grant line {
+  stroke: #248f24;
+}
+.hide-grants .grants {
+  display: none;
+}
+.hide-unselected-grants .grant:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  patents.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.patent > .marker .background {
+  stroke: orange;
+}
+.patent > .marker .icon {
+  fill: orange;
+  stroke: none;
+  transform: scale(0.9) translate(-12px, -12px);
+}
+.patent .contributor .background {
+  stroke: orange;
+}
+.patent .contributor path {
+  fill: orange;
+}
+.patent line {
+  stroke: orange;
+}
+.hide-patents .patent {
+  display: none;
+}
+.hide-unselected-patents .patent:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                               technologies.less                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.technology > .marker .background {
+  stroke: purple;
+}
+.technology > .marker .icon {
+  fill: purple;
+  stroke: none;
+  transform: scale(0.9) translate(-12px, -12px);
+}
+.technology .contributor .background {
+  stroke: purple;
+}
+.technology .contributor path {
+  fill: purple;
+}
+.technology line {
+  stroke: purple;
+}
+.hide-technologies .technology {
+  display: none;
+}
+.hide-unselected-technologies .technology:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                keyframes.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+@keyframes bouncing-keyframes {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes growing-keyframes {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes growing-bounce-keyframes {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shrinking-keyframes {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes shrinking-bounce-keyframes {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes spinning-keyframes {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes blinking-keyframes {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes spinning3d-keyframes {
+  from {
+    transform: rotateY(0deg);
+    moz-transform: rotateY(0deg);
+    ms-transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+    moz-transform: rotateY(360deg);
+    ms-transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes spinning3d-keyframes {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+/******************************************************************************\
+|                                                                              |
+|                             dialog-keyframes.less                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+@keyframes fade-in-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out-keyframes {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slide-from-top-keyframes {
+  from {
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  to {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@keyframes slide-to-top-keyframes {
+  from {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+}
+@keyframes slide-to-bottom-keyframes {
+  from {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
+    -o-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+  }
+}
+@keyframes slide-from-bottom-keyframes {
+  from {
+    -webkit-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
+    -o-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+  }
+  to {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@keyframes zoom-to-keyframes {
+  from {
+    -webkit-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  to {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes zoom-from-keyframes {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+@keyframes shrink-to-bottom-keyframes {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(0, 50%) scale(0);
+  }
+}
+@keyframes grow-from-bottom-keyframes {
+  from {
+    transform: translate(0, 50%) scale(0);
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+  }
+}
+/******************************************************************************\
+|                                                                              |
+|                                animation.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.bouncing {
+  animation: bouncing-keyframes 0.3s ease-in-out;
+}
+.growing-bounce {
+  animation: growing-bounce-keyframes 0.3s ease-in-out;
+}
+.shrinking-bounce {
+  animation: shrinking-bounce-keyframes 0.3s ease-in-out;
+}
+.spinning {
+  animation: spinning-keyframes 2s linear infinite;
+}
+.blinking {
+  animation: blinking-keyframes 0.5s linear infinite;
+}
+.spinning3d .icon,
+.spinning3d .tile,
+.spinning3d .spinning3d,
+.spinning3d .profile.photo {
+  animation-name: spinning3d-keyframes;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  -webkit-animation-name: spinning3d-keyframes;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 5s;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 transitions.less                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.fading-in {
+  animation: fade-in-keyframes;
+  animation-duration: 0.5s;
+}
+.fading-out {
+  animation: fade-out-keyframes;
+  animation-duration: 0.5s;
+}
+.sliding-from-top {
+  animation: slide-from-top-keyframes, fade-in-keyframes;
+  animation-duration: 0.5s;
+}
+.sliding-to-top {
+  animation: slide-to-top-keyframes, fade-out-keyframes;
+  animation-duration: 0.5s;
+}
+.sliding-to-bottom {
+  animation: slide-to-bottom-keyframes, fade-out-keyframes;
+  animation-duration: 0.5s;
+}
+.sliding-from-bottom {
+  animation: slide-from-bottom-keyframes, fade-in-keyframes;
+  animation-duration: 0.5s;
+}
+.zooming-to {
+  animation: zoom-to-keyframes, fade-in-keyframes;
+  animation-duration: 0.5s;
+}
+.zooming-from {
+  animation: zoom-from-keyframes, fade-out-keyframes;
+  animation-duration: 0.5s;
+}
+.growing-in {
+  animation: growing-keyframes, fade-in-keyframes;
+  animation-duration: 0.5s;
+}
+.shrinking-out {
+  animation: shrinking-keyframes, fade-out-keyframes;
+  animation-duration: 0.5s;
+}
+.shrinking-to-bottom {
+  animation: shrink-to-bottom-keyframes, fade-out-keyframes;
+  animation-duration: 0.5s;
+}
+.growing-from-bottom {
+  animation: grow-from-bottom-keyframes, fade-in-keyframes;
+  animation-duration: 0.5s;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                   badges.js                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.badge {
+  min-width: 16px;
+  font-weight: bold;
+  padding: 0 3px;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border-color: white;
+  background: #c5050c;
+}
+.badge i {
+  height: 10px;
+  min-width: 10px;
+  font-size: 85%;
+  vertical-align: top;
+  margin: 1px;
+  color: white;
+}
+.badge.active {
+  cursor: pointer;
+}
+.badge::empty {
+  display: none;
+}
+.badge:empty {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   buttons.js                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+button {
+  color: initial;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ececec;
+  pointer-events: auto;
+  padding: 5px 10px;
+  outline: none;
+}
+button:hover {
+  background: #f7f7f7;
+}
+button.close:hover,
+button.clear:hover {
+  color: crimson;
+  opacity: 1;
+}
+button:focus {
+  outline: none !important;
+}
+button.btn.btn-primary {
+  background: darkred;
+  border: darkred;
+}
+button.btn.btn-primary:hover,
+button.btn.btn-primary:active {
+  background: #580000;
+}
+.expander {
+  display: inline-block;
+}
+.expander button {
+  display: block;
+}
+.expander button:focus {
+  outline: none !important;
+}
+.expander .expand {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  forms.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+input {
+  padding: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lightgrey;
+  border-radius: 5px;
+  outline: none;
+}
+select {
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lightgrey;
+  border-radius: 5px;
+  outline: none;
+}
+.label {
+  font-weight: normal;
+}
+.slider-range .ui-state-active {
+  background: #c5050c;
+  border-color: #c5050c !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  icons.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.thumbnail.icon {
+  width: 50px;
+  height: fit-content;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.place.icon {
+  color: brown;
+}
+.person.icon {
+  color: grey;
+}
+.collaborator.icon {
+  color: grey;
+}
+.grant.icon {
+  color: #248f24;
+}
+.article.icon {
+  color: cornflowerblue;
+}
+.book.icon {
+  color: #a65c5c;
+}
+.book-chapter.icon {
+  color: #a1745f;
+}
+.conference-proceeding.icon {
+  color: #e05252;
+}
+.patent.icon {
+  color: orange;
+}
+.technology.icon {
+  color: purple;
+}
+.award.icon {
+  color: #e0a51b;
+}
+.grants.active > .icon {
+  color: #248f24 !important;
+}
+.articles.active > .icon {
+  color: cornflowerblue !important;
+}
+.books.active > .icon {
+  color: #a65c5c !important;
+}
+.book-chapters.active > .icon {
+  color: #a1745f !important;
+}
+.conference-proceedings.active > .icon {
+  color: #e05252 !important;
+}
+.patents.active > .icon {
+  color: orange !important;
+}
+.technologies.active > .icon {
+  color: purple !important;
+}
+.awards.active > .icon {
+  color: #e0a51b !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                popovers.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.popover {
+  max-width: 500px;
+  border-color: #ececec;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.popover.right > .arrow {
+  border-right-color: transparent;
+}
+.popover .popover-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+}
+.popover .popover-title i,
+.popover .popover-title .icon {
+  margin-right: 5px;
+}
+.popover .popover-title button.close {
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+.popover .popover-title button.close i {
+  font-size: 16px;
+  vertical-align: top;
+  line-height: 20px;
+  margin-right: 0;
+}
+.popover .popover-title button.close:hover {
+  background: darkgrey;
+}
+.popover .popover-content {
+  padding: 10px;
+  max-height: 250px;
+  overflow: auto;
+}
+.popover .popover-content > div {
+  display: flex;
+}
+.popover .popover-content .title {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+.popover .popover-content .title label {
+  display: none !important;
+}
+.popover .popover-content label {
+  display: block;
+  margin: 0;
+}
+.popover .popover-content .info {
+  display: block;
+}
+.popover .popover-content .info > div + div {
+  margin-top: 5px;
+}
+.popover .popover-content .icon {
+  margin-right: 10px;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   tabs.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.nav-tabs {
+  border-bottom: 2px solid #c5050c;
+  margin-bottom: 10px;
+}
+.nav-tabs > li {
+  margin-bottom: 0;
+  margin-top: 10px;
+  margin-left: 5px;
+  position: relative;
+}
+.nav-tabs > li > a {
+  width: 50px;
+  text-align: center;
+  padding: 10px 0;
+}
+.nav-tabs > li > a i {
+  font-size: 20px;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover {
+  background: #f0f0f0;
+  border-color: transparent;
+}
+.nav-tabs > li.active .badge {
+  background: #ed365b;
+}
+.nav-tabs > li:not(.active) > a i {
+  color: #b3b3b3;
+}
+.nav-tabs > li:not(.active) > a:hover {
+  border-color: transparent;
+}
+.nav-tabs > li:not(.active) > a:hover i {
+  color: grey;
+}
+.nav-tabs > li .badge {
+  position: absolute;
+  top: 1px;
+  right: 3px;
+  pointer-events: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                tooltips.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.tooltip-inner {
+  max-width: 400px;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 dialogs.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.modal {
+  display: flex;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+}
+.modal .dialog {
+  width: 75%;
+  height: 75%;
+  padding: 10px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ececec;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.modal .dialog button.close {
+  width: 30px;
+  height: 30px;
+}
+.modal .dialog button.close + .content {
+  margin-top: 40px;
+}
+.modal .dialog#help > .content {
+  height: calc(100% - 40px);
+}
+.modal .dialog h1 {
+  font-weight: bold;
+  font-size: 150%;
+  text-align: center;
+}
+.modal .dialog h1 .icon {
+  color: #c5050c;
+  margin-right: 5px;
+}
+.modal .dialog .content {
+  overflow: auto;
+}
+.modal .dialog .bottom-buttons {
+  margin-top: 20px;
+  text-align: right;
+}
+.modal .dialog#help .content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.modal .dialog#message {
+  width: 600px;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  position: relative;
+}
+.modal .dialog#message.medium-height {
+  height: 150px;
+}
+.modal .dialog#message button.close {
+  position: absolute;
+  right: 10px;
+}
+.modal .dialog#message .content {
+  margin: auto;
+}
+.modal .dialog#download {
+  height: 200px;
+  text-align: center;
+}
+.modal .dialog#download .content .format {
+  margin: 10px;
+}
+.modal .dialog#download .content a button {
+  width: auto;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.modal .dialog#download .content a button i {
+  margin-right: 5px;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  items.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.items ol,
+.items ul:not(.nav-tabs) {
+  padding: 0;
+  list-style-position: inside;
+  margin-bottom: 0;
+}
+.items ol li,
+.items ul:not(.nav-tabs) li {
+  padding: 5px 10px;
+  /*
+			&:not(:last-child) {
+				border-bottom: 2px dashed @list-item-divider-color;
+			}
+			*/
+}
+.items ol li:hover,
+.items ul:not(.nav-tabs) li:hover {
+  background-color: #f0f0f0;
+}
+.items ol li .icon,
+.items ul:not(.nav-tabs) li .icon {
+  margin-right: 5px;
+}
+.items ol li a,
+.items ul:not(.nav-tabs) li a {
+  cursor: pointer;
+}
+.items ol li .options,
+.items ul:not(.nav-tabs) li .options {
+  float: right;
+}
+.items ol li .title {
+  display: inline;
+}
+.items ul:not(.nav-tabs) li {
+  display: flex;
+  flex-direction: column;
+}
+.items ul:not(.nav-tabs) li .title {
+  display: flex;
+}
+.items .items .department .list {
+  margin-left: 10px;
+}
+.items .list label {
+  color: grey;
+}
+.items table {
+  width: 100%;
+}
+.items table th {
+  padding: 5px 10px;
+  padding-right: 20px;
+  background: #f0f0f0;
+  white-space: nowrap !important;
+}
+.items table tr {
+  /*
+			&:not(:last-child) {
+				border-bottom: 2px dashed @list-item-divider-color;
+			}
+			*/
+}
+.items table tr:hover {
+  background-color: #f0f0f0;
+}
+.items table tr td {
+  vertical-align: top;
+  padding: 5px 10px;
+}
+.items table tr td label {
+  margin-top: 10px;
+}
+.items table tr td.duplicate {
+  font-size: 0;
+}
+.items table tr td.year,
+.items table tr td.department,
+.items table tr td.amount {
+  word-break: normal;
+  font-weight: bold;
+  vertical-align: top;
+}
+.items table tr td.first-name,
+.items table tr td.department {
+  width: 50%;
+}
+.items table tr td.contributors {
+  text-align: center;
+}
+.items table tr td.amount {
+  white-space: nowrap !important;
+}
+.items table tr td a:hover {
+  text-decoration: none;
+}
+.items table tr td .title {
+  display: flex;
+}
+.items table tr td .title i {
+  margin-right: 10px;
+}
+.items table tr td .expander {
+  margin-right: -10px;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  layout.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+body {
+  font-size: 14px;
+  margin: 0;
+}
+#main {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+#overlays {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  pointer-events: none;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.full-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.page {
+  padding: 0 50px;
+}
+.page h1:first-child {
+  margin-top: 0;
+}
+canvas {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dark canvas {
+  background: #333333;
+}
+#logo {
+  position: absolute;
+  margin: 10px;
+  right: 0;
+}
+#logo img {
+  height: 40px;
+}
+.overlay {
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+.overlay * {
+  pointer-events: auto;
+}
+.title + .buttons {
+  margin-top: 5px;
+}
+span.count {
+  margin-right: 5px;
+}
+span.highlighted {
+  background: lightblue;
+}
+#index {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+}
+#footer a {
+  color: black;
+}
+#info h1,
+#info h2 {
+  text-align: center;
+}
+#info .subheading {
+  font-weight: bold;
+  text-align: center;
+}
+.fineprint {
+  font-size: 12px;
+}
+.figure {
+  text-align: center;
+}
+.figure img {
+  max-width: 100%;
+}
+.figure .caption {
+  font-weight: bold;
+}
+.figure + p {
+  margin-top: 10px;
+}
+.collapsed .expander .expand {
+  display: block;
+}
+.collapsed .expander .collapse {
+  display: none;
+}
+.collapsed .details {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   main.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#main > .sidebar > .panel:first-child {
+  border-width: 0;
+  border-top: 40px solid #c5050c;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+table.tablesorter-default {
+  font: inherit;
+}
+/******************************************************************************\
+|                                                                              |
+|                                    maps.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#background {
+  background: #f0f0f0;
+}
+#viewport #tiles {
+  opacity: 0.5;
+}
+#viewport #labels text,
+#viewport .marker text {
+  font-size: 13px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: white;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+#viewport.hide-map #tiles,
+#viewport.hide-map #departments,
+#viewport.hide-map #buildings {
+  display: none !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                messages.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#messages {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#messages #info,
+#messages #message {
+  display: inline-block;
+  position: relative;
+  width: 75%;
+  max-height: 75%;
+  pointer-events: none;
+  text-align: center;
+}
+#messages #info button.close,
+#messages #message button.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#messages #info button.close i,
+#messages #message button.close i {
+  margin: 0;
+}
+#messages #info .content,
+#messages #message .content {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  overflow: auto;
+}
+#messages #info .content .icon,
+#messages #message .content .icon {
+  color: #c5050c;
+  margin-right: 5px;
+}
+#messages #info .content .text,
+#messages #message .content .text {
+  font-family: 'Arial Narrow', sans-serif;
+  font-weight: bold;
+}
+#messages #message {
+  font-size: 200%;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   navs.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+a {
+  color: #c5050c;
+}
+a:hover {
+  color: #930409;
+}
+.doi a,
+.url a {
+  word-break: break-all;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 sidebar.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.sidebar {
+  overflow: auto;
+  color: #303030;
+  background-color: #f0f0f0;
+  word-break: break-word;
+  /*
+	.sorting {
+		border-bottom: 2px solid @brand-primary;
+		margin-bottom: 10px;
+	}
+	*/
+}
+.sidebar h1 {
+  font-size: 300%;
+  font-weight: bold;
+  margin-top: 0;
+}
+.sidebar .logo {
+  margin: 10px;
+}
+.sidebar .message {
+  padding: 10px;
+}
+.sidebar button {
+  background: white;
+}
+.sidebar .expander {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+.sidebar .expander button {
+  background: none;
+}
+.sidebar .expander button:active {
+  box-shadow: none;
+}
+.sidebar label {
+  display: block;
+}
+.sidebar .panel {
+  padding: 10px;
+  background: white;
+  border-radius: 0;
+  margin: 0;
+}
+.sidebar .panel .heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 200%;
+  margin: 10px;
+}
+.sidebar .panel:empty {
+  display: none;
+}
+.sidebar .panel button#close {
+  position: absolute;
+  right: 20px;
+  background: #c5050c;
+  color: white;
+}
+.sidebar .panel button#close:hover {
+  color: lightgrey;
+}
+.sidebar .panel .panel {
+  color: black;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar .panel .panel .header {
+  text-align: center;
+  font-weight: bold;
+}
+.sidebar .panel .panel .header + .items {
+  margin-top: 10px;
+}
+.sidebar .panel .panel .header:not(.empty) .icon {
+  display: none;
+}
+.sidebar .panel .panel .header:not(.empty) .count {
+  display: none;
+}
+.sidebar .panel .panel a {
+  color: grey;
+}
+.sidebar ol.panel {
+  padding: 0;
+}
+.sidebar div.profile {
+  padding: 10px;
+}
+.sidebar div.profile > div:not(:first-child) label {
+  margin-top: 10px;
+}
+.sidebar div.profile label {
+  display: block;
+  margin-bottom: 0;
+  font-size: 125%;
+  color: #303030;
+}
+.sidebar .details {
+  margin-top: 10px;
+}
+.sidebar .details .panel {
+  padding: 0;
+}
+.sidebar .radio-buttons {
+  padding: 10px;
+  text-align: center;
+}
+.sidebar .info {
+  padding: 10px;
+}
+.sidebar .info > .title {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+}
+.sidebar .info > .title .icon {
+  display: block;
+}
+.sidebar .info > .title .subtitle {
+  font-size: 75%;
+  padding-bottom: 10px;
+  color: #c5050c;
+}
+.sidebar .info > .title + .items {
+  border-top: 2px solid #c5050c;
+}
+.sidebar .info .content {
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.sidebar .activities > .info > .title {
+  font-size: 150%;
+  margin: 20px;
+}
+.sidebar .items.panel {
+  padding: 0;
+}
+.sidebar .thumbnail {
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  max-width: 250px;
+  cursor: pointer;
+}
+.sidebar a {
+  color: grey;
+  cursor: pointer;
+}
+.sidebar .title a {
+  color: grey;
+}
+.sidebar .buttons {
+  margin-top: 10px;
+  text-align: center;
+  /*
+		padding-top: 10px;
+		border-top: 2px solid @brand-primary;
+		*/
+}
+.sidebar .buttons button {
+  border: none;
+}
+.sidebar .trends {
+  padding: 10px;
+  padding-top: 20px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+.sidebar .trends label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-left: -10px;
+  padding: 5px;
+  top: 0;
+}
+/******************************************************************************\
+|                                                                              |
+|                                splitters.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.split-view {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.split-view.horizontal {
+  display: flex;
+}
+.split-view > .split {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.split-view > .gutter {
+  display: flex;
+  background-color: #ececec;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-color: lightgrey;
+  border-style: solid;
+  overflow: hidden;
+}
+.split-view > .gutter .handle {
+  margin: auto;
+  background-image: url('../images/splitters/grip.png');
+}
+.split-view > .gutter.gutter-horizontal {
+  border-width: 0 1px;
+  cursor: ew-resize;
+}
+.split-view > .gutter.gutter-horizontal .handle {
+  width: 5px;
+  height: 100px;
+  background-image: url('../images/splitters/horizontal-grip.png');
+}
+.split-view > .gutter.gutter-vertical {
+  border-width: 1px 0;
+  cursor: ns-resize;
+}
+.split-view > .gutter.gutter-vertical .handle {
+  width: 100px;
+  height: 5px;
+  background-image: url('../images/splitters/vertical-grip.png');
+}
+.split-view > .split.split-horizontal,
+.split-view > .gutter.gutter-horizontal {
+  height: 100%;
+  float: left;
+}
+body:not(.binary) .contents.split-view > .split.mainbar::after {
+  content: "";
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+body:not(.binary) .desktop.app .contents.split-view > .split.mainbar::after {
+  box-shadow: none;
+}
+.split .split-view > .split::after {
+  box-shadow: none;
+}
+/*
+body[device="phone"] {
+	.gutter.gutter-vertical {
+		padding: 2px;
+
+		.handle {
+			width: 90%;
+		}
+	}
+}
+*/
+.tablesorter-default .header,
+.tablesorter-default .tablesorter-header {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+  background-position: center right;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  white-space: normal;
+  border-top: 2px dashed #c5050c;
+}
+.tablesorter-default thead .headerSortUp,
+.tablesorter-default thead .tablesorter-headerAsc,
+.tablesorter-default thead .tablesorter-headerSortUp {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+  border-top: 2px solid #c5050c;
+}
+.tablesorter-default thead .headerSortDown,
+.tablesorter-default thead .tablesorter-headerDesc,
+.tablesorter-default thead .tablesorter-headerSortDown {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+  border-top: 2px solid #c5050c;
+}
+.tablesorter-default thead .sorter-false {
+  background-image: none;
+  cursor: default;
+  padding: 4px;
+}
+.tablesorter-default .tablesorter-processing {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-image: url(data:image/gif;base64,R0lGODlhFAAUAKEAAO7u7lpaWgAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQBCgACACwAAAAAFAAUAAACQZRvoIDtu1wLQUAlqKTVxqwhXIiBnDg6Y4eyx4lKW5XK7wrLeK3vbq8J2W4T4e1nMhpWrZCTt3xKZ8kgsggdJmUFACH5BAEKAAIALAcAAAALAAcAAAIUVB6ii7jajgCAuUmtovxtXnmdUAAAIfkEAQoAAgAsDQACAAcACwAAAhRUIpmHy/3gUVQAQO9NetuugCFWAAAh+QQBCgACACwNAAcABwALAAACE5QVcZjKbVo6ck2AF95m5/6BSwEAIfkEAQoAAgAsBwANAAsABwAAAhOUH3kr6QaAcSrGWe1VQl+mMUIBACH5BAEKAAIALAIADQALAAcAAAIUlICmh7ncTAgqijkruDiv7n2YUAAAIfkEAQoAAgAsAAAHAAcACwAAAhQUIGmHyedehIoqFXLKfPOAaZdWAAAh+QQFCgACACwAAAIABwALAAACFJQFcJiXb15zLYRl7cla8OtlGGgUADs=) !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 welcome.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.sidebar .welcome.panel {
+  text-align: center;
+  padding: 10%;
+  height: 100%;
+  color: black;
+  background-color: white;
+  border-width: 0;
+}
+.sidebar .welcome.panel h1,
+.sidebar .welcome.panel .subheading,
+.sidebar .welcome.panel .subheading a {
+  color: #c5050c;
+}
+.sidebar .welcome.panel .logo {
+  height: 100px;
+  margin: 25px;
+}
+.sidebar .welcome.panel .subheading {
+  margin-top: 25px;
+}
+.sidebar .welcome.panel .introduction {
+  margin-top: 25%;
+  color: grey;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              affiliations.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.affiliations line {
+  stroke: #d74c68;
+  stroke-dasharray: 5,5;
+  stroke-opacity: 1;
+}
+.hide-affiliations .affiliations {
+  display: none;
+}
+.hide-affiliations .label.selected line {
+  display: none !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                buildings.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.building .polygon {
+  stroke: darkgrey;
+  fill: darkgrey;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+.building.parking-lot .polygon {
+  stroke: lightgrey;
+  fill: lightgrey;
+}
+.building.selected .polygon,
+.building:hover .polygon {
+  stroke: #ed365b;
+  fill: #ed365b;
+  /*
+			filter: drop-shadow(-4px 0px 4px rgba(0,0,0,0.5));
+			*/
+  fill-opacity: 0.5;
+  stroke-opacity: 0.5;
+}
+.popover .building .icon {
+  width: 200px !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                               contributors.less                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.collaborators > .collaborator.selected circle,
+.collaborators > .collaborator:hover circle {
+  fill: #f7abba !important;
+  stroke: #ed365b !important;
+}
+.collaborators > .collaborator.selected + line,
+.collaborators > .collaborator:hover + line {
+  stroke-opacity: 1;
+}
+.collaborators > .collaborator.selected text,
+.collaborators > .collaborator:hover text {
+  fill: #ed365b;
+}
+.collaborators line {
+  stroke-opacity: 0.5;
+  pointer-events: none;
+}
+.hide-collaborators .collaborator {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                               contributors.less                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.contributors .contributor.selected circle,
+.contributors .contributor:hover circle {
+  fill: #f7abba !important;
+  stroke: #ed365b !important;
+}
+.contributors .contributor.selected + line,
+.contributors .contributor:hover + line {
+  stroke-opacity: 1;
+}
+.contributors .contributor.selected text,
+.contributors .contributor:hover text {
+  fill: #ed365b;
+}
+.contributors line {
+  stroke-opacity: 0.5;
+  pointer-events: none;
+}
+.hide-contributors .contributors {
+  display: none;
+}
+.hide-unselected .contributors line {
+  stroke-opacity: 1;
+}
+/******************************************************************************\
+|                                                                              |
+|                               departments.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#viewport #departments circle {
+  fill-opacity: 0.125;
+  stroke: white;
+}
+#viewport #labels text {
+  fill-opacity: 0.75;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 markers.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.marker.selected circle,
+.marker:hover circle,
+.marker.highlighted circle {
+  stroke: #ed365b !important;
+  fill: #f7abba !important;
+}
+.marker.selected path,
+.marker:hover path,
+.marker.highlighted path,
+.marker.selected text,
+.marker:hover text,
+.marker.highlighted text {
+  fill: #ed365b !important;
+}
+.highlighted .marker circle {
+  stroke: #ed365b !important;
+  fill: #f7abba !important;
+}
+.highlighted .marker path,
+.highlighted .marker text {
+  fill: #ed365b !important;
+}
+.highlighted line {
+  stroke: #ed365b;
+}
+.grant > .marker:hover circle,
+.grant > .marker.highlighted circle {
+  fill: #ed365b;
+}
+.grant.highlighted > .marker circle {
+  fill: #ed365b;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  people.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.people > .person {
+  /*
+		> .marker {
+			&:hover, &.selected {
+				circle {
+					stroke: @select-color !important;
+					fill: lighten(@select-color, 25%) !important;
+				}
+
+				path, text {
+					fill: @select-color !important;
+				}
+			}
+		}
+		*/
+}
+.people > .person.selected .interests {
+  display: none;
+}
+.interests {
+  pointer-events: none;
+}
+.popover-content > .person {
+  display: flex;
+}
+.hide-unselected-people .people > .person:not(.selected) {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                    grids.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+pattern svg path {
+  stroke: lightgrey;
+  stroke-width: 1;
+  opacity: 0.5;
+  vector-effect: non-scaling-stroke;
+}
+#grid {
+  opacity: 1;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 labels.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+text.label {
+  font-weight: bold;
+  text-anchor: middle;
+  cursor: default;
+}
+text.label:hover {
+  fill: crimson;
+}
+text.label.hidden {
+  display: none;
+}
+.hide-labels .label:not(.selected) {
+  display: none !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  markers.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+svg.marker {
+  overflow: visible;
+  cursor: default;
+}
+svg.marker path {
+  stroke-width: 1.5;
+  stroke: white;
+}
+svg.marker text {
+  text-anchor: middle;
+  cursor: default;
+  pointer-events: none;
+  font-weight: bold;
+}
+svg.marker .icon {
+  pointer-events: none;
+}
+svg.marker circle {
+  fill-opacity: 0.25;
+}
+.marker .background {
+  fill: white;
+  stroke: black;
+  fill-opacity: 1;
+}
+.hide-marker-labels .marker text {
+  display: none !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                     svg.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+svg {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dark svg {
+  background: #333333;
+}
+#viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*
+ * svg element styles
+ */
+path {
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+path.polygon {
+  stroke-opacity: 0.5;
+  fill-opacity: 0.5;
+}
+circle {
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+line {
+  stroke: grey;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+.hide-map #basemap {
+  display: none;
+}
+.hide-grid #grid {
+  display: none;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                   colors.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                               typeography.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 16px;
+}
+h1,
+h2,
+h3,
+.heading {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+}
+.fineprint {
+  font-size: 1em;
+}
+.tooltip {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 14px;
+}
+.popover {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 16px;
+}
+.btn {
+  font-size: 16px;
+}
+.btn-lg {
+  font-size: 20px;
+}
+.status-message {
+  margin: 0;
+}
+body[device="desktop"] #page .main {
+  font-size: 18px;
+}
+body[device="desktop"] #page .main h1 {
+  font-size: 32px;
+}
+body[device="desktop"] #page .main h2 {
+  font-size: 28px;
+}
+body[device="desktop"] #page .main h3 {
+  font-size: 24px;
+}
+body[device="desktop"] #page .main p {
+  font-size: 18px;
+}
+body[device="desktop"] .welcome #title {
+  font-size: 36px;
+}
+body[device="phone"] h1 {
+  font-size: 1.5em;
+}
+body[device="phone"] h2 {
+  font-size: 1.25em;
+}
+body[device="phone"] h3 {
+  font-size: 1em;
+}
+/******************************************************************************\
+|                                                                              |
+|                                   styles.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                               activities-bar.js                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#activities-bar {
+  position: absolute;
+  top: 235px;
+  left: 10px;
+}
+#activities-bar .buttons button#close {
+  color: white;
+  background: crimson;
+  border: crimson;
+}
+#activities-bar #person-buttons {
+  display: flex;
+  flex-direction: column;
+}
+#activities-bar button#show-info.selected {
+  color: cornflowerblue;
+}
+#activities-bar button#show-contributors.selected {
+  color: #4d4d4d;
+}
+#activities-bar button#show-activities.selected {
+  color: #4d4d4d;
+}
+#activities-bar button#show-grants.selected {
+  color: #248f24;
+}
+#activities-bar button#show-articles.selected {
+  color: cornflowerblue;
+}
+#activities-bar button#show-books.selected {
+  color: #a65c5c;
+}
+#activities-bar button#show-book-chapters.selected {
+  color: #a1745f;
+}
+#activities-bar button#show-conference-proceedings.selected {
+  color: #e05252;
+}
+#activities-bar button#show-patents.selected {
+  color: orange;
+}
+#activities-bar button#show-technology.selected {
+  color: purple;
+}
+#activities-bar button#show-awards.selected {
+  color: #e0a51b;
+}
+#activities-bar button#show-help.selected {
+  color: #b25555;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 date-bar.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#date-bar {
+  display: flex;
+  margin: auto;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  padding-left: 5px;
+}
+#date-bar > div {
+  text-align: center;
+  margin: 0 5px;
+  height: 30px;
+}
+#date-bar > div label {
+  font-size: 13px;
+  line-height: 30px;
+}
+#date-bar > div input[type="checkbox"] {
+  margin-left: 5px;
+  vertical-align: top;
+}
+#date-bar .title {
+  line-height: 30px;
+}
+#date-bar #date {
+  display: flex;
+  width: 100px;
+  padding: 0;
+}
+#date-bar #date #year {
+  width: 100px;
+  line-height: 30px;
+}
+#date-bar #date #play {
+  margin-left: -5px;
+}
+#date-bar #play i.fa-play {
+  color: green;
+}
+#date-bar #play i.fa-pause {
+  color: crimson;
+}
+#date-bar #date-slider {
+  display: flex;
+  min-width: 250px;
+  flex-grow: 1;
+  padding: 9px;
+}
+#date-bar #date-slider .slider-range {
+  width: 100%;
+}
+#date-bar .buttons {
+  padding: 0;
+}
+#date-bar .buttons button {
+  margin-left: 5px;
+}
+#date-bar .buttons button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/*
+ * slider styles
+ */
+.slider-label {
+  width: 50px;
+}
+.ui-slider-handle {
+  border: 1px solid #aaaaaa !important;
+  outline: none !important;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  help-bar.js                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#help-bar {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+/******************************************************************************\
+|                                                                              |
+|                                map-mode-bar.js                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#map-bar {
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+/******************************************************************************\
+|                                                                              |
+|                                search-bar.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#search-bar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 75%;
+}
+#search-bar input {
+  background: #e7e7e7;
+  font-size: 20px;
+  width: 100%;
+  opacity: 1;
+  margin: auto;
+  margin-right: 5px;
+  padding: 0 10px;
+  border-radius: 15px;
+}
+#search-bar select {
+  text-align: center;
+  padding: 0 10px;
+  margin: 0 5px;
+}
+#source-selector {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  right: 10px;
+}
+#source-selector .title {
+  margin: 0 5px;
+  line-height: 30px;
+}
+#source-selector .title i {
+  margin-right: 5px;
+}
+/******************************************************************************\
+|                                                                              |
+|                                settings-bar.js                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#settings-bar {
+  position: absolute;
+  top: 65px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+/******************************************************************************\
+|                                                                              |
+|                                 toolbars.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+.toolbar {
+  display: flex;
+  padding: 5px;
+  background: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ececec;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.toolbar .title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #c5050c;
+}
+.toolbar .buttons {
+  display: flex;
+}
+.toolbar .buttons button {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: darkgrey;
+  background: transparent;
+  padding: 0;
+}
+.toolbar .buttons button.close:hover,
+.toolbar .buttons button.clear:hover {
+  color: crimson;
+}
+.toolbar .buttons button:hover {
+  color: #676767;
+}
+.toolbar .buttons button.selected {
+  color: #4d4d4d;
+}
+.toolbar .buttons button.selected:hover {
+  color: #4d4d4d;
+}
+.toolbar .buttons button:active {
+  background: #d9d9d9;
+}
+.toolbar input,
+.toolbar select,
+.toolbar button {
+  border: none;
+}
+.toolbar select {
+  background: #e7e7e7;
+}
+.toolbar .slider-range {
+  border-color: lightgrey;
+}
+.toolbar:not(.vertical) .buttons button:not(:first-child) {
+  margin-left: 5px;
+}
+.toolbar.vertical {
+  flex-direction: column;
+  text-align: center;
+}
+.toolbar.vertical .title {
+  margin: 0 -5px;
+}
+.toolbar.vertical .buttons {
+  flex-direction: column;
+  align-items: end;
+}
+.toolbar.vertical .buttons button:not(:last-child) {
+  margin: auto;
+}
+.toolbar.vertical .divider {
+  display: block;
+  border-bottom: 2px dashed lightgrey;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  zoom-bar.js                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#zoom-bar {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+#zoom-bar .buttons .current {
+  margin-bottom: 5px;
+}
+#zoom-bar .buttons .current {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}

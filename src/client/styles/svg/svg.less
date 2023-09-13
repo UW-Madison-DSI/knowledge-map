@@ -1,0 +1,69 @@
+/******************************************************************************\
+|                                                                              |
+|                                     svg.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+svg {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dark svg {
+	background: #333333;
+}
+
+#viewport {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/*
+ * svg element styles
+ */
+
+path {
+	stroke-width: 2;
+	vector-effect: non-scaling-stroke;
+
+	&.polygon {
+		stroke-opacity: 0.5;
+		fill-opacity: 0.5;
+	}
+}
+
+circle {
+	stroke-width: 2;
+	vector-effect: non-scaling-stroke;
+}
+
+line {
+	stroke: grey;
+	stroke-width: 2;
+	vector-effect: non-scaling-stroke;
+}
+
+//
+// hiding methods
+//
+
+.hide-map {
+	#basemap {
+		display: none;
+	}
+}
+
+.hide-grid {
+	#grid {
+		display: none;
+	}
+}

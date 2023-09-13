@@ -1,0 +1,60 @@
+/******************************************************************************\
+|                                                                              |
+|                                  people.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.people {
+
+	> .person {
+
+		/*
+		> .marker {
+			&:hover, &.selected {
+				circle {
+					stroke: @select-color !important;
+					fill: lighten(@select-color, 25%) !important;
+				}
+
+				path, text {
+					fill: @select-color !important;
+				}
+			}
+		}
+		*/
+
+		&.selected {
+			.interests {
+				display: none;
+			}
+		}
+	}
+}
+
+.interests {
+	pointer-events: none;
+}
+
+.popover-content {
+	> .person {
+		display: flex;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-unselected-people {
+	.people {
+		> .person:not(.selected) {
+			display: none;
+		}
+	}
+}

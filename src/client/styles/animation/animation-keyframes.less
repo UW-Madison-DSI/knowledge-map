@@ -1,0 +1,107 @@
+/******************************************************************************\
+|                                                                              |
+|                                keyframes.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+@keyframes bouncing-keyframes {
+	0% {
+		transform:scale(1);
+	}
+	50% {
+		transform:scale(1.1);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
+
+@keyframes growing-keyframes {
+	0% {
+		transform:scale(0);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
+
+@keyframes growing-bounce-keyframes {
+	0% {
+		transform:scale(0);
+	}
+	75% {
+		transform:scale(1.25);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
+
+@keyframes shrinking-keyframes {
+	0% {
+		transform:scale(1);
+	}
+	100% {
+		transform:scale(0);
+	}
+}
+
+@keyframes shrinking-bounce-keyframes {
+	0% {
+		transform:scale(1);
+	}
+	25% {
+		transform:scale(1.25);
+	}
+	100% {
+		transform:scale(0);
+	}
+}
+
+@keyframes spinning-keyframes {
+	0% { 
+		transform: rotate(0deg); 
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes blinking-keyframes {  
+	50% {
+		opacity: 0.0;
+	}
+}
+
+@keyframes spinning3d-keyframes {
+	from {
+		transform: rotateY(0deg);
+		moz-transform: rotateY(0deg); 		// Firefox
+		ms-transform: rotateY(0deg); 		// Microsoft Browsers
+	}
+	to {
+		transform: rotateY(360deg);
+		moz-transform: rotateY(360deg); 	// Firefox
+		ms-transform: rotateY(360deg); 		// Microsoft Browsers
+	}
+}
+
+@-webkit-keyframes spinning3d-keyframes {
+	from {
+  		-webkit-transform: rotateY(0deg);
+  	}
+  	to {
+  		-webkit-transform: rotateY(360deg);
+  	}
+}

@@ -1,0 +1,112 @@
+/******************************************************************************\
+|                                                                              |
+|                               typeography.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+@main-font: "Red Hat Text", sans-serif;
+@title-font: "Red Hat Display", sans-serif;
+
+//
+// styles
+//
+
+body {
+	font-family: @main-font;
+	font-size: 16px;
+}
+
+//
+// headings
+//
+
+h1, h2, h3, .heading {
+	font-family: @title-font;
+	font-weight: bold;
+}
+
+//
+// other
+//
+
+.fineprint {
+	font-size: 1em;
+}
+
+.tooltip {
+	font-family: @main-font;
+	font-size: 14px;
+}
+
+.popover {
+	font-family: @main-font;
+	font-size: 16px;
+}
+
+.btn {
+	font-size: 16px;
+}
+
+.btn-lg {
+	font-size: 20px;
+}
+
+.status-message {
+	margin: 0;
+}
+
+//
+// desktop styles
+//
+
+body[device="desktop"] {
+
+	#page .main {
+		font-size: 18px;
+
+		h1 {
+			font-size: 32px;
+		}
+
+		h2 {
+			font-size: 28px;
+		}
+
+		h3 {
+			font-size: 24px;
+		}
+
+		p {
+			font-size: 18px;
+		}
+	}
+
+	.welcome #title {
+		font-size: 36px;
+	}
+}
+
+//
+// mobile styles
+//
+
+body[device="phone"] {
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	h2 {
+		font-size: 1.25em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+}

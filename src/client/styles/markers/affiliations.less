@@ -1,0 +1,35 @@
+/******************************************************************************\
+|                                                                              |
+|                              affiliations.less                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.affiliations {
+	line {
+		stroke: @affiliations-color;
+		stroke-dasharray: 5,5;
+		stroke-opacity: 1.0;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-affiliations {
+	.affiliations {
+		display: none;
+	}
+
+	.label.selected {
+		line {
+			display: none !important;
+		}
+	}
+}

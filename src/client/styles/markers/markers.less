@@ -1,0 +1,66 @@
+/******************************************************************************\
+|                                                                              |
+|                                 markers.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.marker {
+	&.selected, &:hover, &.highlighted {
+		circle {
+			stroke: @select-color !important;
+			fill: lighten(@select-color, 25%) !important;
+		}
+
+		path, text {
+			fill: @select-color !important;
+		}
+	}
+}
+
+.highlighted {
+
+	// override default marker colors
+	//
+	.marker {
+		circle {
+			stroke: @select-color !important;
+			fill: lighten(@select-color, 25%) !important;
+		}
+
+		path, text {
+			fill: @select-color !important;
+		}
+	}
+
+	line {
+		stroke: @select-color;
+	}
+}
+
+//
+// grant markers
+//
+
+.grant {
+	> .marker {
+		&:hover, &.highlighted {
+			circle {
+				fill: @select-color;
+			}
+		}
+	}
+
+	&.highlighted {
+		> .marker {
+			circle {
+				fill: @select-color;
+			}
+		}
+	}
+}

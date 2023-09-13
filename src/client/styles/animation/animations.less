@@ -1,0 +1,49 @@
+/******************************************************************************\
+|                                                                              |
+|                                animation.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.bouncing {
+	animation: bouncing-keyframes 0.3s ease-in-out;
+}
+
+.growing-bounce {
+	animation: growing-bounce-keyframes 0.3s ease-in-out;
+}
+
+.shrinking-bounce {
+	animation: shrinking-bounce-keyframes 0.3s ease-in-out;
+}
+
+.spinning {
+	animation: spinning-keyframes 2s linear infinite;
+}
+
+.blinking {
+	animation: blinking-keyframes 0.5s linear infinite;    
+}
+
+.spinning3d {
+	.icon, .tile, .spinning3d, .profile.photo {
+		animation-name: spinning3d-keyframes;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-duration: 5s;
+		-webkit-animation-name: spinning3d-keyframes;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-duration: 5s;
+	}
+}

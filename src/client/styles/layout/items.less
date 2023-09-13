@@ -1,0 +1,175 @@
+/******************************************************************************\
+|                                                                              |
+|                                  items.less                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+//
+// list colors
+//
+
+@list-item-hover-color: @very-light-grey;
+@list-item-divider-color: @very-light-grey;
+@list-label-color: grey;
+
+//
+// list attributes
+//
+
+@list-item-padding: 5px 10px;
+
+//
+// list styles
+//
+
+.items {
+
+	//
+	// item lists
+	//
+
+	ol, ul:not(.nav-tabs) {
+		padding: 0;
+		list-style-position: inside;
+		margin-bottom: 0;
+
+		li {
+			padding: @list-item-padding;
+
+			/*
+			&:not(:last-child) {
+				border-bottom: 2px dashed @list-item-divider-color;
+			}
+			*/
+
+			&:hover {
+				background-color: @list-item-hover-color;
+			}
+
+			.icon {
+				margin-right: 5px;
+			}
+
+			a {
+				cursor: pointer;
+			}
+
+			.options {
+				float: right;
+			}
+		}
+	}
+
+	ol {
+		li {
+			.title {
+				display: inline;
+			}
+		}
+	}
+
+	ul:not(.nav-tabs) {
+		li {
+			display: flex;
+			flex-direction: column;
+
+			.title {
+				display: flex;
+			}
+		}
+	}
+
+	//
+	// nested lists
+	//
+
+	.items .department .list {
+		margin-left: 10px;
+	}
+
+	.list label {
+		color: @list-label-color;
+	}
+
+	//
+	// item tables
+	//
+
+	table {
+		width: 100%;
+
+		th {
+			padding: @list-item-padding;
+			padding-right: 20px;
+			background: @very-light-grey;
+			white-space: nowrap !important;
+		}
+
+		tr {
+			/*
+			&:not(:last-child) {
+				border-bottom: 2px dashed @list-item-divider-color;
+			}
+			*/
+
+			&:hover {
+				background-color: @list-item-hover-color;
+			}
+
+			td {
+				vertical-align: top;
+				padding: @list-item-padding;
+
+				label {
+					margin-top: 10px;
+				}
+
+				&.duplicate {
+					// visibility: hidden;
+					font-size: 0;
+				}
+
+				&.year, &.department, &.amount {
+					word-break: normal;
+					font-weight: bold;
+					vertical-align: top;	
+				}
+
+				&.first-name,
+				&.department {
+					width: 50%;
+				}
+
+				&.contributors {
+					text-align: center;
+				}
+
+				&.amount {
+					white-space: nowrap !important;
+				}
+
+				a:hover {
+					text-decoration: none;
+				}
+
+				.title {
+					display: flex;
+
+					i {
+						margin-right: 10px;
+					}
+				}
+
+				.expander {
+					margin-right: -10px;
+				}
+			}
+		}
+	}
+}

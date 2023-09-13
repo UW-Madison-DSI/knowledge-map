@@ -1,0 +1,52 @@
+/******************************************************************************\
+|                                                                              |
+|                                 welcome.less                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+//
+// sidebar colors
+//
+
+@welcome-panel-text-color: black;
+@welcome-heading-color: @brand-primary;
+@welcome-panel-background-color: white;
+
+//
+// sidebar styles
+//
+
+.sidebar {
+	.welcome.panel {
+		text-align: center;
+		padding: 10%;
+		height: 100%;
+		color: @welcome-panel-text-color;
+		background-color: @welcome-panel-background-color;
+		border-width: 0;
+
+		h1, .subheading, .subheading a {
+			color: @welcome-heading-color;
+		}
+
+		.logo {
+			height: 100px;
+			margin: 25px;
+		}
+
+		.subheading {
+			margin-top: 25px;
+		}
+
+		.introduction {
+			margin-top: 25%;
+			color: grey;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+/******************************************************************************\
+|                                                                              |
+|                                  zoom-bar.js                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+#zoom-bar {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+
+	.buttons {
+		.current {
+			margin-bottom: 5px;
+		}
+
+		.current {
+			text-align: center;
+			width: @toolbar-button-size;
+			height: @toolbar-button-size;
+			font-size: @toolbar-button-font-size;
+			line-height: @toolbar-button-size;
+			font-weight: bold;
+			border-radius: @button-border-radius;
+			border-width: 1px;
+			border-style: solid;
+			border-color: transparent;
+		}
+	}
+}

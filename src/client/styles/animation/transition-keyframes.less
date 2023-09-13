@@ -1,0 +1,122 @@
+/******************************************************************************\
+|                                                                              |
+|                             dialog-keyframes.less                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+//
+// fading transitions
+//
+
+@keyframes fade-in-keyframes {
+	from { 
+		opacity: 0;
+	}
+	to { 
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-keyframes {
+	from { 
+		opacity: 1;
+	}
+	to { 
+		opacity: 0;
+	}
+}
+
+//
+// sliding transitions
+//
+
+@keyframes slide-from-top-keyframes {
+	from { 
+		.translate(0, -50%);
+	}
+	to { 
+		.translate(0, 0);
+	}
+}
+
+@keyframes slide-to-top-keyframes {
+	from { 
+		.translate(0, 0);
+	}
+	to { 
+		.translate(0, -50%);
+	}
+}
+
+@keyframes slide-to-bottom-keyframes {
+	from { 
+		.translate(0, 0);
+	}
+	to { 
+		.translate(0, 100%);
+	}
+}
+
+@keyframes slide-from-bottom-keyframes {
+	from { 
+		.translate(0, 100%);
+	}
+	to { 
+		.translate(0, 0);
+	}
+}
+
+//
+// zooming transitions
+//
+
+@keyframes zoom-to-keyframes {
+	from { 
+		.scale(1.25);
+	}
+	to { 
+		.scale(1);
+	}
+}
+
+@keyframes zoom-from-keyframes {
+	from { 
+		transform: scale(1);
+	}
+	to { 
+		transform: scale(1.25);
+	}
+}
+
+//
+// shrinking transitiions
+//
+
+@keyframes shrink-to-bottom-keyframes {
+	from { 
+		transform: translate(0, 0) scale(1);
+	}
+	to { 
+		transform: translate(0, 50%) scale(0);
+	}
+}
+
+@keyframes grow-from-bottom-keyframes {
+	from { 
+		transform: translate(0, 50%) scale(0);
+	}
+	to { 
+		transform: translate(0, 0) scale(1);
+	}
+}

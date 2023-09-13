@@ -1,0 +1,57 @@
+/******************************************************************************\
+|                                                                              |
+|                              book-chapters.less                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.book-chapter {
+
+	> .marker {
+
+		.background {
+			stroke: @book-chapter-color;
+		}
+
+		.icon {
+			fill: @book-chapter-color;
+			stroke: none;
+			transform: scale(0.8) translate(-12px, -12px);
+		}
+	}
+
+	.contributor {
+		.background {
+			stroke: @book-chapter-color;
+		}
+
+		path {
+			fill: @book-chapter-color;
+		}
+	}
+
+	line {
+		stroke: @book-chapter-color;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-book-chapters {
+	.book-chapter {
+		display: none;
+	}
+}
+
+.hide-unselected-book-chapters {
+	.book-chapter:not(.selected) {
+		display: none;
+	}
+}

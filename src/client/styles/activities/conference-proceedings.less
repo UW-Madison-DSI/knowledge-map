@@ -1,0 +1,57 @@
+/******************************************************************************\
+|                                                                              |
+|                         conference-proceedings.less                          |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+
+.conference-proceeding {
+
+	> .marker {
+
+		.background {
+			stroke: @conference-proceeding-color;
+		}
+
+		.icon {
+			fill: @conference-proceeding-color;
+			stroke: none;
+			transform: scale(0.8) translate(-12px, -12px);
+		}
+	}
+
+	.contributor {
+		.background {
+			stroke: @conference-proceeding-color;
+		}
+
+		path {
+			fill: @conference-proceeding-color;
+		}
+	}
+
+	line {
+		stroke: @conference-proceeding-color;
+	}
+}
+
+//
+// hiding styles
+//
+
+.hide-conference-proceedings {
+	.conference-proceeding {
+		display: none;
+	}
+}
+
+.hide-unselected-conference-proceeding {
+	.conference-proceeding:not(.selected) {
+		display: none;
+	}
+}
