@@ -4,6 +4,7 @@
 log/
 backups/
 kmap/
+Documents/KMap/
 research/
 *.swp
 .env
