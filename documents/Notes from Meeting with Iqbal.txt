@@ -1,0 +1,61 @@
+- rii - resources innovation and impact
+
+- leaning towards a SAS model rather than open source
+
+- Skills:
+	- natural language processing
+	- graph processing 
+	- dot language
+	- Neo4j
+	- 
+
+	- PubMed
+	- DimensionAI
+	- Google Scholar
+
+	Minimal data
+	- current employee
+	- awards / grants
+	- proposals
+	- publications
+	- global research topics
+
+
+	Faculty reporting system
+	- Faculty180 API
+
+	Used most by faculty members and administrators
+	- uniform layout 
+	- univeral search - across departments
+
+	Tracking usage:
+	- Google analytics
+	- Tracking search queries
+	- 
+
+	Very few people submit their own data
+	- Not many people know about the system
+	- People reluctant to give info
+
+	Natural language query
+	- Currently in progress
+	- 
+
+	Documentation
+	- Not ready enough to publish
+	- There is a KMap API
+	- 
+
+	Updating
+	- Entire map is rebuilt every two months
+	- Process takes two days
+
+
+	Document types
+	- CSV, JSON, HTML
+	- .Doc files
+
+	- Their vision is to build this as a service and to get funding through service and hosting fees.
+	- There is one other group at the University Arizona who is trying to put together their own instance but they are still struggling with the data collection aspect.
+	- 
+	- 

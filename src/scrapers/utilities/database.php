@@ -5,7 +5,7 @@ include 'lib/mysql.php';
 define('DATABASE_HOST', '127.0.0.1');
 define('DATABASE_USERNAME', 'root');
 define('DATABASE_PASSWORD', 'root');
-define('DATABASE_NAME', 'academic_analytics');
+define('DATABASE_NAME', 'academic');
 define('DATABASE_DEBUG', false);
 
 // connect to database
@@ -79,7 +79,7 @@ function insert($db, $tableName, $rows) {
 		//
 		} else if (gettype($value) == 'string') {
 			if ($value) {
-				$value = $db->escape_string(utf8_encode($value));
+				$value = $db->escape_string(mb_convert_encoding($value, 'UTF-8', mb_list_encodings()));
 			}
 
 		// handle arrays

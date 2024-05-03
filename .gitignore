@@ -2,6 +2,9 @@
 .ipynb_checkpoints/
 .jupyter/
 log/
+backups/
+kmap/
+research/
 *.swp
 .env
 academic_analytics_content.sql
