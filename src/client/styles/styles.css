@@ -1385,16 +1385,6 @@ span.highlighted {
   width: 100%;
   height: 100%;
 }
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 5px 10px;
-}
-#footer a {
-  color: black;
-}
 #info h1,
 #info h2 {
   text-align: center;
@@ -1448,6 +1438,28 @@ span.highlighted {
 }
 table.tablesorter-default {
   font: inherit;
+}
+/******************************************************************************\
+|                                                                              |
+|                                  mainbar.less                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
+\******************************************************************************/
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 50px;
+  pointer-events: none;
+}
+#footer a {
+  color: black;
 }
 /******************************************************************************\
 |                                                                              |
@@ -2601,9 +2613,7 @@ body[device="phone"] h3 {
 \******************************************************************************/
 #search-bar {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 75%;
+  margin: 10px;
 }
 #search-bar input {
   background: #e7e7e7;
@@ -2632,6 +2642,11 @@ body[device="phone"] h3 {
 }
 #source-selector .title i {
   margin-right: 5px;
+}
+@media (min-width: 640px) {
+  #search-bar {
+    width: 75%;
+  }
 }
 /******************************************************************************\
 |                                                                              |

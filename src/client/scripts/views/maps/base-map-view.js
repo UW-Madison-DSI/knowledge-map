@@ -23,8 +23,8 @@ import MultiGrid from '../svg/viewports/grids/multi-grid.js';
 import MouseDragPanBehavior from '../svg/viewports/behaviors/navigation/mouse-drag-pan-behavior.js';
 import MouseDragZoomBehavior from '../svg/viewports/behaviors/navigation/mouse-drag-zoom-behavior.js';
 import MouseWheelZoomBehavior from '../svg/viewports/behaviors/navigation/mouse-wheel-zoom-behavior.js';
-import BingMap from '../maps/bing-maps.js';
-import MapTiles from '../maps/map-tiles.js';
+import BingMap from '../maps/tiles/bing-maps.js';
+import MapTiles from '../maps/tiles/map-tiles.js';
 import ZoomBarView from '../toolbars/zoom-bar-view.js';
 import FullScreenable from '../behaviors/full-screenable.js';
 

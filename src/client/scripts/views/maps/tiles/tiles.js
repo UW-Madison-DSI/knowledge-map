@@ -10,7 +10,7 @@
 |            Copyright (c) 2020, Megahed Labs, www.megahedlabs.com             |
 \******************************************************************************/
 
-import Units from '../../utilities/math/units.js';
+import Units from '../../../utilities/math/units.js';
 
 export default function Tiles(viewport, element, tileSize, url) {
 

@@ -21,13 +21,20 @@ require('vendor/autoload.php');
 include 'utilities/database.php';
 include 'api/api.php';
 
+//
 // main
+//
+
+// fetch all departments
 //
 $institution = fetchInstitution($api);
 $institutionUnits = fetchInstitutionUnits($api, $institution);
 for ($i = 0; $i < count($institutionUnits); $i++) {
 	$institutionUnit = $institutionUnits[$i];
 	echo "Fetching " . $institutionUnit->unit->name . "...\n";
+
+	// fetch people from each department
+	//
 	$people = fetchPeopleByInstitutionUnit($api, $institution, $institutionUnit);
 	if ($people) {
 		$activities = true;

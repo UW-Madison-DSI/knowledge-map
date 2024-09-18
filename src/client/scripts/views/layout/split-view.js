@@ -15,12 +15,10 @@
 |     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
 \******************************************************************************/
 
-import '../../../vendor/split-js/split.js';
+import BaseView from '../../views/base-view.js';
+import Browser from '../../utilities/web/browser.js';
 import '../../utilities/scripting/array-utils.js';
-import BaseView from '../base-view.js';
-
-// pre-compile template
-//
+import '../../../vendor/split-js/split.js';
 
 export default BaseView.extend({
 
@@ -51,6 +49,8 @@ export default BaseView.extend({
 	// splitter sizes
 	//
 	sizes: [33, 67],
+	gutter_size: 10,
+	mobile_gutter_size: 20,
 	prevSizes: [],
 	minSizes: 0,
 	orientation: 'horizontal',
@@ -108,7 +108,7 @@ export default BaseView.extend({
 	//
 
 	getGutterSize: function() {
-		return 10;
+		return Browser.is_mobile? this.mobile_gutter_size : this.gutter_size;
 	},
 
 	getSizes: function() {
@@ -144,7 +144,7 @@ export default BaseView.extend({
 			case 'vertical':
 				this.$el.find('> .split').removeClass('split-horizontal').addClass('split-vertical');
 				break;
-		}		
+		}
 	},
 
 	setSideBarSize: function(sidebarSize) {
@@ -187,7 +187,7 @@ export default BaseView.extend({
 				case 'vertical':
 					this.$el.find('.mainbar').css('min-height', minSizes[1] + 'px');
 					break;
-			}	
+			}
 		}
 	},
 
@@ -198,7 +198,7 @@ export default BaseView.extend({
 			this.hideSideBar();
 		}
 	},
-	
+
 	resetSideBar: function() {
 		this.splitter.setSizes(this.options.sizes || this.sizes);
 		this.onResize();
@@ -244,12 +244,12 @@ export default BaseView.extend({
 	// sidebar opening / closing methods
 	//
 
-	openSideBar: function(size) {
+	openSideBar: function() {
 		this.setSideBarSize(this.getInitialSideBarSize());
 		this.onResize();
 	},
 
-	closeSideBar: function(options) {
+	closeSideBar: function() {
 		this.prevSizes = this.getSizes();
 		this.setSideBarSize(0);
 	},
@@ -306,7 +306,7 @@ export default BaseView.extend({
 		// show splitter
 		//
 		this.showSplitter();
-		
+
 		// show child views
 		//
 		if (this.getSideBarView) {
@@ -335,16 +335,16 @@ export default BaseView.extend({
 		//
 		this.setOrientation(this.orientation);
 
-		// create splitter 
+		// create splitter
 		//
 		this.splitter = Split(!this.flipped? [
-			this.$el.find('> .sidebar')[0], 
+			this.$el.find('> .sidebar')[0],
 			this.$el.find('> .mainbar')[0]
 		] : [
 			this.$el.find('> .mainbar')[0],
 			this.$el.find('> .sidebar')[0]
 		], {
-			
+
 			// options
 			//
 			direction: this.orientation,
@@ -413,7 +413,7 @@ export default BaseView.extend({
 				this.$el.find('> .mainbar').css({
 					width: 'calc(100% - ' + gutterSize + 'px)'
 				});
-			}						
+			}
 		}
 	},
 
@@ -436,7 +436,7 @@ export default BaseView.extend({
 				this.$el.find('> .mainbar').css({
 					height: 'calc(100% - ' + gutterSize + 'px)'
 				});
-			}	
+			}
 		} else {
 
 			// adjust sidebar
@@ -453,7 +453,7 @@ export default BaseView.extend({
 				this.$el.find('> .mainbar').css({
 					height: 'calc(100% - ' + gutterSize + 'px)'
 				});
-			}			
+			}
 		}
 	},
 
@@ -462,7 +462,7 @@ export default BaseView.extend({
 		// adjust widths and height for completely open or closed sidebar
 		//
 		switch (this.orientation) {
-			
+
 			case "horizontal":
 				this.adjustWidths();
 				break;
@@ -484,7 +484,7 @@ export default BaseView.extend({
 		if (this.isDestroyed()) {
 			return;
 		}
-		
+
 		// apply to child views
 		//
 		if (this.hasChildView('sidebar') && this.getChildView('sidebar').onLoad) {
@@ -513,6 +513,12 @@ export default BaseView.extend({
 
 	onDoubleClickGutter: function() {
 		this.resetSideBar();
+	},
+
+	onTapGutter: function() {
+		if (Browser.is_mobile) {
+			this.toggleSideBar();
+		}
 	},
 
 	//

@@ -24,11 +24,10 @@ include 'api/api.php';
 // main
 //
 $institution = fetchInstitution($api);
-/*
 $institutionUnits = fetchInstitutionUnits($api, $institution);
 $people = fetchPeopleByInstitutionUnits($api, $institution, $institutionUnits[1]);
-*/
 
+/*
 $institutionUnits = [
 	"Animal and Dairy Science" => 28579,
 	"Computer Science" => 28603,
@@ -37,6 +36,7 @@ $institutionUnits = [
 	"Department of Statistics" => 28673,
 	"World Affairs and The Global Economy (WAGE), Center for" => 35493
 ];
+*/
 
 $institutionUnit = $institutionUnits["Department of Statistics"];
 $people = fetchPeopleByInstitutionUnitsId($api, $institution, $institutionUnit);

@@ -15,11 +15,11 @@
 |     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
 \******************************************************************************/
 
-import BaseView from '../base-view.js';
-import SplitView from '../layout/split-view.js';
-import MapView from './knowledge-map-view.js';
-import TrendsView from './trends-view.js';
-import ProfileDetailsView from '../items/people/profile/profile-details-view.js';
+import BaseView from '../../views/base-view.js';
+import SplitView from '../../views/layout/split-view.js';
+import TrendsView from '../../views/layout/trends-view.js';
+import MapView from '../../views/maps/knowledge-map-view.js';
+import ProfileDetailsView from '../../views/items/people/profile/profile-details-view.js';
 
 //
 // fetching methods

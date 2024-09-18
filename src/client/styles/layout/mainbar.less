@@ -1,6 +1,6 @@
 /******************************************************************************\
 |                                                                              |
-|                                search-bar.less                               |
+|                                  mainbar.less                                |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -10,50 +10,15 @@
 |     Copyright (C) 2022, Data Science Institute, University of Wisconsin      |
 \******************************************************************************/
 
-#search-bar {
+#footer {
 	position: absolute;
-	margin: 10px;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding: 10px 50px;
+	pointer-events: none;
 
-	input {
-		background: #e7e7e7;
-		font-size: 20px;
-		width: 100%;
-		opacity: 1;
-		margin: auto;
-		margin-right: 5px;
-		padding: 0 10px;
-		border-radius: (@toolbar-button-size / 2);
-	}
-
-	select {
-		text-align: center;
-		padding: 0 10px;
-		margin: 0 5px;
-	}
-}
-
-#source-selector {
-	position: absolute;
-	top: 10px;
-	display: flex;
-	right: 10px;
-
-	.title {
-		margin: 0 5px;
-		line-height: @toolbar-button-size;
-
-		i {
-			margin-right: 5px;
-		}
-	}
-}
-
-//
-// desktop styles
-//
-
-@media (min-width: 640px) {
-	#search-bar {
-		width: 75%;
+	a {
+		color: black;
 	}
 }

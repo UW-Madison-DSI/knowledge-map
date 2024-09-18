@@ -1,47 +1,47 @@
 /******************************************************************************\
 |                                                                              |
-|                               microsoft-maps.js                              |
+|                                 bing-maps.js                                 |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This is a utility for rendering maps using tiles from Microsoft.      |
+|        This is a utility for rendering maps using tiles from Bing.           |
 |                                                                              |
 |******************************************************************************|
 |            Copyright (c) 2020, Megahed Labs, www.megahedlabs.com             |
 \******************************************************************************/
 
-import Map from "./maps.js";
+import Map from "../../../views/maps/tiles/maps.js";
 
 //
 // constructor
 //
 
-export default function MSMap(longitude, latitude, zoomLevel) {
+export default function BingMap(longitude, latitude, zoomLevel, view, labels) {
 
 	// set attributes
 	//
 	this.longitude = longitude;
 	this.latitude = latitude;
 	this.zoomLevel = zoomLevel;
+	this.view = view || 'hybrid';
+	this.labels = labels;
 
 	// set map server attributes
 	//
-	this.mapTileServer = "http://r3.ortho.tiles.virtualearth.net";
-	this.satelliteTileServer = "http://a0.ortho.tiles.virtualearth.net";
-	this.hybridTileServer = "http://h1.ortho.tiles.virtualearth.net";
-
-	// set paths
-	//
-	this.mapTilePath = "tiles";
-	this.satelliteTilePath = "tiles";
-	this.hybridTilePath = "tiles";
+	this.tileServer = "https://t2.ssl.ak.dynamic.tiles.virtualearth.net/comp/ch";
 	
 	return this;
 }
 
 // inherit prototype from "superclass"
 //
-MSMap.prototype = _.extend(new Map(), {
+BingMap.prototype = _.extend(new Map(), {
+
+	//
+	// static attributes
+	//
+
+	maxZoomLevel: 20,
 
 	//
 	// querying methods
@@ -53,8 +53,9 @@ MSMap.prototype = _.extend(new Map(), {
 		var xmin = 0, xmax = 1;
 		var ymin = 0, ymax = 1;
 		var location = "";
+		var zoomLevel = this.zoomLevel - (zoomOffset || 0);
 
-		for (var i = 0; i < this.zoomLevel - (zoomOffset || 0); i++) {
+		for (var i = 0; i < zoomLevel; i++) {
 			var xmid = (xmin + xmax) / 2;
 			var ymid = (ymin + ymax) / 2;
 
@@ -214,27 +215,29 @@ MSMap.prototype = _.extend(new Map(), {
 	},
 
 	//
-	// map tile URL querying methods
+	// map tile URL quering methods
 	//
 
-	getLocationTileUrl: function(view, location) {
-		if (view == "map" || view == "roads")
-			return this.mapTileServer + "/" + this.mapTilePath + "/" + "r" + location + ".png" + "?g=45";
-		else if (view == "aerial" || view == "satellite")
-			return this.satelliteTileServer + "/" + this.satelliteTilePath + "/" + "a" + location + ".png" + "?g=45";
-		else
-			return this.hybridTileServer + "/" + this.hybridTilePath + "/" + "h" + location + ".png" + "?g=45";
+	getLocationTileUrl: function(location) {
+		if (this.view == "map") {
+			// return this.tileServer + "/" + location + "?it=G,L,LA";
+			return this.tileServer + "/" + location + "?it=G" + (this.labels? ',L' : '');
+		} else if (this.view == "aerial" || this.view == "satellite") {
+			return this.tileServer + "/" + location + "?it=A" + (this.labels? ',L' : '');
+		} else {
+			return this.tileServer + "/" + location + "?it=A,G,L,LA";
+		}
 	},
 
-	getTileURL: function(view, latitude, longitude, zoomLevel) {
-		return this.getLocationTileUrl(view, this.getTileLocation(latitude, longitude, zoomLevel));
+	getTileURL: function() {
+		return this.getLocationTileUrl(this.getCenterTileLocation());
 	},
 
 	//
-	// map overlay methods
+	// map overlay querying methods
 	//
 
-	getTiles: function(view, rows, columns, latitude, longitude, zoomLevel, units, height, northAngle) {
+	getTiles: function(view, rows, columns, units, height, northAngle) {
 		var tiles = [];
 		
 		// set optional parameters
@@ -248,19 +251,20 @@ MSMap.prototype = _.extend(new Map(), {
 		
 		// find map location
 		//
-		var tileX = this.getTileX(longitude, zoomLevel);
-		var tileY = this.getTileY(latitude, zoomLevel);
-		var tileWidth = this.getTileWidth(latitude, zoomLevel, units);
-		var tileHeight = this.getTileHeight(latitude, zoomLevel, units);
-		var tileXOffset = (this.getX(longitude) * this.getNumTiles(zoomLevel)) - tileX;
-		var tileYOffset = (this.getY(latitude) * this.getNumTiles(zoomLevel)) - tileY;
+		var tileX = this.getTileX();
+		var tileY = this.getTileY();
+		var tileWidth = this.getTileWidth(units);
+		var tileHeight = this.getTileHeight(units);
+		var numTiles = this.getNumTiles();
+		var tileXOffset = (this.getX() * numTiles) - tileX;
+		var tileYOffset = (this.getY() * numTiles) - tileY;
 		var rowOffset = Math.floor((rows - 1) / 2);
 		var columnOffset = Math.floor((columns - 1) / 2);
 		var axis = new HCVector3(0, 0, 1);
 		
 		// find map starting location
 		//
-		var location = this.getTileLocation(latitude, longitude, zoomLevel);
+		var location = this.getCenterTileLocation();
 		for (var i = 0; i < rowOffset; i++) {
 			location = this.getNeighborTileLocation(location, "upper");
 		}
@@ -295,9 +299,9 @@ MSMap.prototype = _.extend(new Map(), {
 						vertices[j].rotateBy(northAngle, axis);
 					}
 				}
-			
+				
 				// add tile
-				//	
+				//
 				tiles[index] = new HCPolygon(vertices, material, texcoords);
 				columnLocation = this.getNeighborTileLocation(columnLocation, "right");
 				index++;

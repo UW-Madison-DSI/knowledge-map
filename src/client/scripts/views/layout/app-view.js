@@ -49,6 +49,14 @@ import DownloadDialogView from '../dialogs/download-dialog-view.js';
 export default SplitView.extend({
 
 	//
+	// attributes
+	//
+
+	orientation: $(window).width() < 640? 'vertical': 'horizontal',
+	sizes: $(window).width() < 640? [0, 100] : [33, 67],
+	mobile_gutter_size: 0,
+
+	//
 	// constructor
 	//
 

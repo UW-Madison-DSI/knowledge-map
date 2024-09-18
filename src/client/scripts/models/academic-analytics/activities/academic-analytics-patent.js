@@ -33,11 +33,11 @@ export default Patent.extend({
 	parseContributors(data, options) {
 		let contributors = [];
 		for (let i = 0; i < data.length; i++) {
-			// if (!options || options.person.id != data[i].id) {
+			if (!options || options.person.id != data[i].id) {
 				contributors.push(new Contributor(data[i], {
 					parse: true
 				}));
-			// }	
+			}
 		}
 		return contributors;
 	},

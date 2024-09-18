@@ -10,8 +10,8 @@
 |            Copyright (c) 2020, Megahed Labs, www.megahedlabs.com             |
 \******************************************************************************/
 
-import Tiles from './tiles.js';
-import Units from '../../utilities/math/units.js';
+import Tiles from '../../../views/maps/tiles/tiles.js';
+import Units from '../../../utilities/math/units.js';
 
 export default function MapTiles(viewport, element, tileSize, map) {
 

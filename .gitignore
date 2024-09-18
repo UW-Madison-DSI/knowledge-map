@@ -6,6 +6,7 @@ backups/
 kmap/
 Documents/KMap/
 research/
+presentations/
 *.swp
 .env
 academic_analytics_content.sql

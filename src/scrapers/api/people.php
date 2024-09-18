@@ -123,7 +123,9 @@ function storePerson($db, $person, $activities = true) {
 	// find if person already exists
 	//
 	if (!$person || exists($db, 'people', 'id', $person->id)) {
-		echo $person->firstName . " " . $person->lastName . " already exists.\n"; 
+		if ($person) {
+			echo $person->firstName . " " . $person->lastName . " already exists.\n"; 
+		}
 		return;
 	}
 
@@ -149,6 +151,7 @@ function storePerson($db, $person, $activities = true) {
 		'researchTerms' => property_exists($person, 'researchTerms')? getTerms($person->researchTerms) : null,
 		'researchSummary' => property_exists($person, 'researchSummary')? $person->researchSummary : null,
 		'researchInterests' => property_exists($person, 'researchTerms')? getTerms($person->researchInterests) : null,
+		'createDate' => date('Y-m-d H:i:s')
 	];
 
 	if (DEBUG) {

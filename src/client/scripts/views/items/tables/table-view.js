@@ -76,7 +76,9 @@ export default CollectionView.extend({
 	},
 
 	onRender: function() {
-		this.sortBy(this.options.sorting);
+		if (this.options.sorting) {
+			this.sortBy(this.options.sorting);
+		}
 		if (this.groupBy) {
 			this.groupBy(this.options.sorting);
 		}
